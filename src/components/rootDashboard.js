@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 
-const AdminDashboard = () => {
+const RootDashboard = () => {
   return (
     <>
      <navbar className="flex flex-wrap items-center justify-between p-5 bg-indigo-500">
@@ -108,7 +108,7 @@ const AdminDashboard = () => {
                 <svg class="w-20 h-20 fill-indigo-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M73.8 29.7H26.3a6 6 0 0 0-6 6v28.6a6 6 0 0 0 6 6h47.4a6 6 0 0 0 6-6V35.7a6.13 6.13 0 0 0-5.9-6Zm-34.9 5.4a7.6 7.6 0 1 1-7.6 7.6 7.66 7.66 0 0 1 7.6-7.6Zm9.8 28.3H29.2c-1.7 0-2-1.1-2-1.6a11.45 11.45 0 0 1 11.4-9.9h.4a11.45 11.45 0 0 1 11.4 9.9c.3.5 0 1.6-1.7 1.6Zm23.1-6.9a2 2 0 0 1-2 2H61a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h8.8a2 2 0 0 1 2 2Zm0-11a2 2 0 0 1-2 2H55a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h14.8a2 2 0 0 1 2 2Z"/></svg>
                 </div>
                 <div className="mb-4 flex justify-center">
-                  <Link to="/employees">
+                  <Link to="/employeesRoot">
                     <button
                       className="inline-block w-40 cursor-pointer select-none rounded-md border border-indigo-500 bg-indigo-500 py-2 px-5 text-center align-middle text-xs text-white shadow hover:border-indigo-600 hover:bg-indigo-600 hover:text-white focus:border-indigo-600 focus:bg-indigo-600 focus:text-white focus:shadow-none"
                       type="submit"
@@ -145,4 +145,4 @@ const AdminDashboard = () => {
   );
 }
 
-export default AdminDashboard;
+export default RootDashboard;

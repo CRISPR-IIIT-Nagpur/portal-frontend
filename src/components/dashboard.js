@@ -14,9 +14,9 @@ const Dashboard = () => {
       <Link to="/" className="text-indigo-100 hover:text-white font-bold mr-4">Logout</Link>
       </div>
       </navbar>
-      <div className="flex min-h-screen w-screen w-full items-center justify-center text-gray-600 bg-gray-50">
+      <div className="flex min-h-screen min-w-screen items-center justify-center text-gray-600 bg-gray-50">
         <div className="relative">
-          <div className="hidden sm:block h-56 w-56 text-indigo-300 absolute a-z-10 -left-20 -top-20">
+          <div className="hidden sm:block h-56 w-56 text-indigo-300 absolute a-z-10 -left-20 -top-30">
             <svg
               id="patternId"
               width="100%"
@@ -48,7 +48,7 @@ const Dashboard = () => {
               />
             </svg>
           </div>
-          <div className="hidden sm:block h-28 w-28 text-indigo-300 absolute a-z-10 -right-20 -bottom-20">
+          <div className="hidden sm:block h-28 w-28 text-indigo-300 absolute a-z-10 -right-20 -bottom-10">
             <svg
               id="patternId"
               width="100%"
