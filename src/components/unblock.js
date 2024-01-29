@@ -51,12 +51,15 @@ const Unblock = () => {
             <p className="mb-2 text-blue-600">Hostel Complaint Resolution</p>
             <h3 className="mb-5 text-3xl font-semibold">Unblock website</h3>
             <p className="text-[18px] mb-10 text-md text-gray-600">
-              If you've previously blocked access to certain websites and now
-              wish to unblock them, you're in the right place. Please use the
-              form below to submit the URL of the website you want to unblock
-              and provide a brief explanation of the purpose for unblocking it.
-              Our team will review your request and process it promptly to
-              restore access to the requested website.
+              The "Unblock Website" section on our website facilitates requests
+              for the removal of firewall restrictions on specific websites.
+              Users can provide details such as the URL and reason for
+              unblocking, streamlining the process. Our team diligently reviews
+              each request to balance user needs with network security.
+              Additionally, the section serves as an educational resource,
+              promoting responsible internet usage. Overall, it reflects our
+              commitment to user-centric solutions and proactive risk
+              management.
             </p>
             <div className="mb-5 flex font-medium">
               <div className="mr-4">
