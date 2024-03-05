@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Unblock = () => {
-  const [url, setUrl] = useState("");
-  const [purpose, setPurpose] = useState("");
+const ReportMischief = () => {
+  const [btid, setBtid] = useState("");
+  const [description, setDescription] = useState("");
   const [submitted, setSubmitted] = useState(false);
-  const handleUrlChange = (e) => {
-    setUrl(e.target.value);
+  const handleBtidChange = (e) => {
+    setBtid(e.target.value);
   };
 
-  const handlePurposeChange = (e) => {
-    setPurpose(e.target.value);
+  const handleDescriptionChange = (e) => {
+    setDescription(e.target.value);
   };
 
   const handleSubmit = (e) => {
@@ -96,36 +96,36 @@ const Unblock = () => {
                 </span>
               </h3>
               <p className="text-gray-600">
-                Submit request to unblock website below
+                Report a mischief or an incident that has occurred in the hostel.
               </p>
             </div>
             <div className="p-4 sm:p-8">
               <form onSubmit={handleSubmit}>
                 <div className="mb-4">
                   <label className="block mb-2 text-sm font-medium text-gray-600">
-                    Website URL
+                    BT ID
                   </label>
                   <input
                     type="text"
                     className="block w-full p-3 rounded bg-gray-100 border border-transparent focus:outline-none"
-                    placeholder="https://example.com"
-                    onChange={handleUrlChange}
-                    value={url}
+                    placeholder="BT ID"
+                    onChange={handleBtidChange}
+                    value={btid}
                     required
                   />
                 </div>
                 <div className="mb-4">
                   <label className="block mb-2 text-sm font-medium text-gray-600">
-                    Purpose of Website
+                    Description
                   </label>
-                  <input
-                    type="text"
-                    className="block w-full p-3 rounded bg-gray-100 border border-transparent focus:outline-none"
-                    placeholder="Purpose"
-                    onChange={handlePurposeChange}
-                    value={purpose}
-                    required
-                  />
+                  <textarea
+                    name="description"
+                    id="description"
+                    rows="4"
+                    className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-black"
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                  ></textarea>
                 </div>
                 <div className="flex justify-center">
                   <button
@@ -163,4 +163,4 @@ const Unblock = () => {
   );
 };
 
-export default Unblock;
+export default ReportMischief;

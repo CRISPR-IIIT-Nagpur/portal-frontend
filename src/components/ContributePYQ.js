@@ -1,22 +1,34 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Unblock = () => {
-  const [url, setUrl] = useState("");
-  const [purpose, setPurpose] = useState("");
+const ContributePYQ = () => {
+  const [courseCode, setCourseCode] = useState("");
+  const [year, setYear] = useState("");
+  const [examType, setExamType] = useState("S1");
+  const [semester, setSemester] = useState("1");
   const [submitted, setSubmitted] = useState(false);
-  const handleUrlChange = (e) => {
-    setUrl(e.target.value);
-  };
 
-  const handlePurposeChange = (e) => {
-    setPurpose(e.target.value);
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
   };
+
+  const handleCourseCodeChange = (e) => {
+    setCourseCode(e.target.value);
+  }
+
+  const handleYearChange = (e) => {
+    setYear(e.target.value);
+  }
+
+  const handleExamTypeChange = (e) => {
+    setExamType(e.target.value);
+  }
+
+  const handleSemesterChange = (e) => {
+    setSemester(e.target.value);
+  }
 
   return (
     <>
@@ -96,36 +108,74 @@ const Unblock = () => {
                 </span>
               </h3>
               <p className="text-gray-600">
-                Submit request to unblock website below
+                Submit a PYQ (Previous Year Question) paper to help your peers and juniors. Please make sure the uploaded PYQ is not already present on the server.
               </p>
             </div>
             <div className="p-4 sm:p-8">
               <form onSubmit={handleSubmit}>
-                <div className="mb-4">
+              <div className="mb-4">
                   <label className="block mb-2 text-sm font-medium text-gray-600">
-                    Website URL
+                    Course Code
                   </label>
                   <input
                     type="text"
-                    className="block w-full p-3 rounded bg-gray-100 border border-transparent focus:outline-none"
-                    placeholder="https://example.com"
-                    onChange={handleUrlChange}
-                    value={url}
-                    required
-                  />
+                    value={courseCode}
+                    onChange={handleCourseCodeChange}
+                    className="w-full p-2 border border-gray-300 rounded-md"
+                    placeholder="Course Code"
+                    required/>
                 </div>
                 <div className="mb-4">
                   <label className="block mb-2 text-sm font-medium text-gray-600">
-                    Purpose of Website
+                    Year
                   </label>
                   <input
                     type="text"
-                    className="block w-full p-3 rounded bg-gray-100 border border-transparent focus:outline-none"
-                    placeholder="Purpose"
-                    onChange={handlePurposeChange}
-                    value={purpose}
-                    required
-                  />
+                    value={year}
+                    onChange={handleYearChange}
+                    className="w-full p-2 border border-gray-300 rounded-md"
+                    placeholder="Year"
+                    required/>
+                </div>
+                <div className="mb-4">
+                  <label className="block mb-2 text-sm font-medium text-gray-600">
+                    Exam Type
+                  </label>
+                  <select
+                    value={examType}
+                    onChange={handleExamTypeChange}
+                    className="w-full p-2 border border-gray-300 rounded-md"
+                  >
+                    <option value="S1">Sessional 1</option>
+                    <option value="S2">Sessional 2</option>
+                    <option value="ES">End Sem</option>
+                  </select>
+                </div>
+                <div className="mb-4">
+                  <label className="block mb-2 text-sm font-medium text-gray-600">
+                    Semester
+                  </label>
+                  <select
+                    value={semester}
+                    onChange={handleSemesterChange}
+                    className="w-full p-2 border border-gray-300 rounded-md"
+                  >
+                    <option value="1">Semester 1</option>
+                    <option value="2">Semester 2</option>
+                    <option value="3">Semester 3</option>
+                    <option value="4">Semester 4</option>
+                    <option value="5">Semester 5</option>
+                    <option value="6">Semester 6</option>
+                    <option value="7">Semester 7</option>
+                    <option value="8">Semester 8</option>
+                  </select>
+                </div>
+
+                <div className="mb-4">
+                  <label className="block mb-2 text-sm font-medium text-gray-600">
+                    Upload PDF
+                  </label>
+                  <input type="file" accept=".pdf"/>
                 </div>
                 <div className="flex justify-center">
                   <button
@@ -163,4 +213,4 @@ const Unblock = () => {
   );
 };
 
-export default Unblock;
+export default ContributePYQ;

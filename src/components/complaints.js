@@ -90,9 +90,9 @@ const Complaints = () => {
 
     return (
         <>
-            <navbar className="flex flex-wrap items-center justify-between p-5 bg-indigo-500">
+            <navbar className="flex flex-wrap items-center justify-between p-5 bg-black">
                 <div className="flex items-center flex-shrink-0 text-white mr-6">
-                    <span className="font-semibold text-xl tracking-tight">Internet</span>
+                    <span className="font-semibold text-xl tracking-tight">CRISPR</span>
                 </div>
                 <div className="flex items-center">
                     <Link to="/employees" className="text-indigo-100 hover:text-white font-bold mr-4">
@@ -106,7 +106,7 @@ const Complaints = () => {
                     </Link>
                 </div>
             </navbar>
-            <h1 className="text-center text-3xl text-indigo-500 font-bold mt-10">Complaints</h1>
+            <h1 className="text-center text-3xl text-black font-bold mt-10">Complaints</h1>
             <div className="flex min-h-screen min-w-screen items-center justify-center text-gray-600 bg-gray-50">                       
                     <div className="overflow-x-auto">
                         <table className="table-auto border-collapse w-full">

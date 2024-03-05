@@ -42,12 +42,12 @@ const TrackComplaint = () => {
 
         return (
                 <>
-                    <navbar className="flex flex-wrap items-center justify-between p-5 bg-indigo-500">
+                    <navbar className="flex flex-wrap items-center justify-between p-5 bg-black">
                         <div className="flex items-center flex-shrink-0 text-white mr-6">
-                        <span className="font-semibold text-xl tracking-tight">Internet</span>
+                        <span className="font-semibold text-xl tracking-tight">CRISPR</span>
                         </div>
                         <div className="flex items-center">
-                        <Link to="/registerComplaint" className="text-indigo-100 hover:text-white font-bold mr-4">Register Complaints</Link>
+                        <Link to="/registerNetworkComplaint" className="text-indigo-100 hover:text-white font-bold mr-4">Register Complaints</Link>
                         <Link to="/unblock" className="text-indigo-100 hover:text-white font-bold mr-4">Unblock Websites</Link>
                         <Link to="/" className="text-indigo-100 hover:text-white font-bold mr-4">Logout</Link>
                         </div>
@@ -62,7 +62,7 @@ const TrackComplaint = () => {
         <div className="container mx-auto grid gap-8 md:grid-cols-3 sm:grid-cols-5">
             {complaints.map((complaint) => (
                 <div key={complaint.id} className="relative flex h-full flex-col rounded-md border border-gray-200 bg-white p-2.5 hover:border-gray-400 sm:rounded-lg sm:p-5">
-                    <div className="text-lg mb-2 font-semibold text-indigo-500 sm:mb-1.5 sm:text-2xl">
+                    <div className="text-lg mb-2 font-semibold text-black sm:mb-1.5 sm:text-2xl">
                         {complaint.title}
                     </div>
                     <div className="flex items-center">
@@ -72,14 +72,14 @@ const TrackComplaint = () => {
                     <p className="text-sm mt-2">{complaint.description}</p>
                     <div className="mt-auto">
                         <div className="h-1 bg-gray-200 rounded-full mt-2">
-                            <div className={`h-full ${complaint.status === "Acknowledged" ? "bg-indigo-500" : complaint.status === "In Progress" ? "bg-yellow-500" : "bg-green-500"} rounded-full`} style={{ width: `${complaint.status === "Acknowledged" ? "33%" : complaint.status === "In Progress" ? "66%" : "100%"}` }}></div>
+                            <div className={`h-full ${complaint.status === "Acknowledged" ? "bg-indigo-600" : complaint.status === "In Progress" ? "bg-yellow-500" : "bg-green-500"} rounded-full`} style={{ width: `${complaint.status === "Acknowledged" ? "33%" : complaint.status === "In Progress" ? "66%" : "100%"}` }}></div>
                         </div>
                         
                         <p className="text-sm font-semibold mt-2">
                             Status: {complaint.status}
                         </p>
                         
-                        <button className="text-sm font-semibold text-indigo-500 mt-2 hover:underline focus:outline-none"onClick={
+                        <button className="text-sm font-semibold text-black mt-2 hover:underline focus:outline-none"onClick={
                             () => {
                                 alert(`Name: ${complaint.name}\nContact: ${complaint.contact}`);
                             }

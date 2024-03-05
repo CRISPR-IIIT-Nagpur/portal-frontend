@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './components/login';
 import Dashboard from './components/dashboard';
-import RegisterComplaint from './components/registerComplaint';
+import RegisterNetworkComplaint from './components/registerNetworkComplaint';
 import TrackComplaint from './components/trackComplaint';
 import Unblock from './components/unblock';
 import AdminDashboard from './components/adminDashboard';
@@ -11,6 +11,12 @@ import Employees from './components/employees';
 import Complaints from './components/complaints';
 import RootDashboard from './components/rootDashboard';
 import EmployeesRoot from './components/employeesRoot';
+import RegisterMaintenanceComplaint from './components/registerMaintenanceComplaint';
+import ReportMischief from './components/reportMischief';
+import LostAndFound from './components/lostAndFound';
+import ReportFriend from './components/reportFriend';
+import ReportSelf from './components/reportSelf';
+import ContributePYQ from './components/ContributePYQ';
 
 const App = () => {
   return (
@@ -18,7 +24,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/registerComplaint" element={<RegisterComplaint />} />
+        <Route path="/registerNetworkComplaint" element={<RegisterNetworkComplaint />} />
         <Route path="/trackComplaint" element={<TrackComplaint />} />
         <Route path="/unblock" element={<Unblock />} />
         <Route path="/adminDashboard" element={<AdminDashboard />} />
@@ -27,6 +33,12 @@ const App = () => {
         <Route path="/complaints" element={<Complaints />} />
         <Route path="/rootDashboard" element={<RootDashboard />} />
         <Route path="/employeesRoot" element={<EmployeesRoot />} />
+        <Route path="/registerMaintenanceComplaint" element={<RegisterMaintenanceComplaint />} />
+        <Route path="/reportMischief" element={<ReportMischief />} />
+        <Route path="/lostAndFound" element={<LostAndFound />} />
+        <Route path="/reportFriend" element={<ReportFriend />} />
+        <Route path="/reportSelf" element={<ReportSelf />} />
+        <Route path="/contributePYQ" element={<ContributePYQ />} />
       </Routes>
     </Router>
   );

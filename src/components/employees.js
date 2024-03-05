@@ -89,8 +89,8 @@ const Employees = () => {
 
     return (
         <>
-             <div class="sidebar fixed top-0 bottom-0 lg:left-0 p-2 w-[200px] overflow-y-auto text-center bg-indigo-500">
-  <div class="text-white text-2xl font-bold">Internet</div>
+             <div class="sidebar fixed top-0 bottom-0 lg:left-0 p-2 w-[200px] overflow-y-auto text-center bg-black">
+  <div class="text-white text-2xl font-bold">CRISPR</div>
   <div class="flex flex-col justify-center text-left py-10">
     <Link to="/export" class="text-indigo-100 hover:text-white font-medium mr-4 py-2">
     <svg class="w-6 h-6 stroke-indigo-900 inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><g stroke-linecap="round" stroke-width="1.5"><path d="M12 20a8 8 0 0 1-8-8m16 0a7.985 7.985 0 0 1-3 6.245"/><path stroke-linejoin="round" d="M12 14V4m0 0 3 3m-3-3L9 7"/></g></svg>
@@ -112,12 +112,12 @@ const Employees = () => {
     </Link>
   </div>
       </div>
-            <h1 className="text-center text-3xl text-indigo-500 font-bold mt-10">Employees</h1>
+            <h1 className="text-center text-3xl text-black font-bold mt-10">Employees</h1>
             <div className="flex flex-wrap justify-center mt-10">
-            <button className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-full mt-10 ml-10">
+            <button className="bg-black hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-full mt-10 ml-10">
                Export As CSV
             </button>
-            <button className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-full mt-10 ml-10">
+            <button className="bg-black hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-full mt-10 ml-10">
                 Export As PDF
             </button>
             </div>
@@ -166,7 +166,7 @@ const Employees = () => {
                                             {item.total}
                                         </td>
                                         <td className=" bg-gray-200 text-gray-600 border border-gray-300 ">
-                                            <button className="bg-indigo-500 hover:bg-indigo-700 text-white px-3 ml-10 rounded-full">
+                                            <button className="bg-black hover:bg-indigo-700 text-white px-3 ml-10 rounded-full">
                                                 Assign
                                             </button>
                                         </td>
