@@ -9,14 +9,12 @@ import AdminDashboard from './components/adminDashboard';
 import Export from './components/export';
 import Employees from './components/employees';
 import Complaints from './components/complaints';
-import RootDashboard from './components/rootDashboard';
-import EmployeesRoot from './components/employeesRoot';
 import RegisterMaintenanceComplaint from './components/registerMaintenanceComplaint';
 import ReportMischief from './components/reportMischief';
 import LostAndFound from './components/lostAndFound';
 import ReportFriend from './components/reportFriend';
 import ReportSelf from './components/reportSelf';
-import ContributePYQ from './components/ContributePYQ';
+import ContributePYQ from './components/contributePYQ';
 
 const App = () => {
   return (
@@ -31,8 +29,6 @@ const App = () => {
         <Route path="/export" element={<Export />} />
         <Route path="/employees" element={<Employees />} />
         <Route path="/complaints" element={<Complaints />} />
-        <Route path="/rootDashboard" element={<RootDashboard />} />
-        <Route path="/employeesRoot" element={<EmployeesRoot />} />
         <Route path="/registerMaintenanceComplaint" element={<RegisterMaintenanceComplaint />} />
         <Route path="/reportMischief" element={<ReportMischief />} />
         <Route path="/lostAndFound" element={<LostAndFound />} />

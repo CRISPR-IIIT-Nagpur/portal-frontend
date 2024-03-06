@@ -10,12 +10,11 @@ const Dashboard = () => {
       <span className="font-semibold text-xl tracking-tight">CRISPR</span>
       </div>
       <div className="flex items-center">
-
       <Link to="/" className="text-indigo-100 hover:text-white font-bold mr-4">Logout</Link>
       </div>
       </navbar>
       <br />
-      <div className="flex min-h-screen min-w-screen items-center justify-center text-gray-600 bg-gray-50">
+      <div className="flex min-h-screen min-w-screen items-center justify-center text-gray-600">
         <div className="relative">
           <div className="hidden sm:block h-56 w-56 text-black absolute a-z-10 -left-20 -top-30">
             <svg
@@ -81,9 +80,7 @@ const Dashboard = () => {
               />
             </svg>
           </div>
-            <h1 className="text-black text-2xl font-bold text-center mb-20">Hi user, How you doing today?</h1>
-          
-          <div className="grid grid-wrap gap-12 grid-cols-3">
+          <div className="grid gap-5 lg:grid-cols-3">
             <div className="relative flex flex-col sm:w-[15rem] rounded-lg border-gray-400 bg-white shadow-lg px-4 bg-blue-100">
               <div className="flex-auto p-6">
                 <div className="mb-10 flex items-center justify-center overflow-hidden">

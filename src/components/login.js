@@ -11,8 +11,6 @@ const Login = () => {
     
     if (username === "admin" && password === "12345") {
       Navigate("/adminDashboard");
-    } else if (username === "root" && password === "root"){
-      Navigate("/rootDashboard");
     }
     else {
       Navigate("/dashboard");

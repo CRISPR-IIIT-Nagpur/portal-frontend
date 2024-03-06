@@ -90,97 +90,71 @@ const Complaints = () => {
 
     return (
         <>
-            <navbar className="flex flex-wrap items-center justify-between p-5 bg-black">
-                <div className="flex items-center flex-shrink-0 text-white mr-6">
-                    <span className="font-semibold text-xl tracking-tight">CRISPR</span>
+        <div class="flex min-h-screen flex-row">
+  <div class="w-64 shrink-0 -translate-x-full transform transition-transform duration-150 ease-in md:translate-x-0 md:drop-shadow-sm bg-black">
+  <div class="text-white text-2xl font-bold w-fit p-5">CRISPR</div>
+          <div className="grid w-fit">
+          <Link to="/employees" className="text-indigo-100 hover:text-white font-bold mr-4 p-4">Employees</Link>
+          <Link to="/export" className="text-indigo-100 hover:text-white font-bold mr-4 p-4">Export Data</Link>
+          <Link to="/complaints" className="text-indigo-100 hover:text-white font-bold mr-4 p-4">Complaints</Link>
+          <Link to="/" className="text-indigo-100 hover:text-white font-bold mr-4 p-4">Logout</Link>
+          </div>
+  </div>
+
+  <main role="main" class="-ml-64 flex flex-grow flex-col transition-all duration-150 ease-in md:ml-0">
+    <div class="flex flex-grow flex-col bg-slate-100 p-4">
+      <div class="rounded-lg bg-white shadow">
+        <div class="px-4 py-5 sm:p-6 lg:p-8">
+          <div class="mb-5 justify-between sm:flex sm:items-center font-bold text-3xl">
+            Complaints
+          </div>
+          <div class="mt-8 flex flex-col">
+            <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+              <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+                <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
+                  <table class="min-w-full divide-y divide-slate-300">
+                    <thead class="bg-black">
+                      <tr>
+                        <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-white sm:pl-6">Name</th>
+                        <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-white sm:pl-6">Type</th>
+                        <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-white sm:pl-6">Ongoing</th>
+                        <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-white sm:pl-6">Resolved</th>
+                        <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-white sm:pl-6">Total</th>
+                        <th scope="col" class="relative py-3.5 pr-4 text-right text-sm font-semibold text-white sm:pr-6">Assign Complaints</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 bg-white">
+                        {data.map((item, index) => (
+                            <tr key={index}>
+                            <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">{item.name}</td>
+                            <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">{item.type}</td>
+                            <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">{item.ongoing}</td>
+                            <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">{item.resolved}</td>
+                            <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">{item.total}</td>
+                            <td class="pr-4 py-3 text-right text-sm font-medium text-gray-900 sm:pr-6">
+                                <Link to="/assignComplaints">
+                                <button
+                                    className="inline-block cursor-pointer select-none rounded-md border border-black bg-black py-2 px-5 text-center align-middle text-xs text-white shadow hover:border-indigo-600 hover:bg-indigo-600 hover:text-white focus:border-indigo-600 focus:bg-indigo-600 focus:text-white focus:shadow-none"
+                                    type="submit"
+                                >
+                                    Assign
+                                </button>
+                                </Link>
+                            </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                  </table>
                 </div>
-                <div className="flex items-center">
-                    <Link to="/employees" className="text-indigo-100 hover:text-white font-bold mr-4">
-                        Employees
-                    </Link>
-                    <Link to="/complaints" className="text-indigo-100 hover:text-white font-bold mr-4">
-                        Complaints
-                    </Link>
-                    <Link to="/" className="text-indigo-100 hover:text-white font-bold mr-4">
-                        Logout
-                    </Link>
-                </div>
-            </navbar>
-            <h1 className="text-center text-3xl text-black font-bold mt-10">Complaints</h1>
-            <div className="flex min-h-screen min-w-screen items-center justify-center text-gray-600 bg-gray-50">                       
-                    <div className="overflow-x-auto">
-                        <table className="table-auto border-collapse w-full">
-                            <thead>
-                                <tr>
-                                    <th className="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 ">
-                                        Floor Number
-                                    </th>
-                                    <th className="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 ">
-                                        Room Number
-                                    </th>
-                                    <th className="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 ">
-                                        Name
-                                    </th>
-                                    <th className="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 ">
-                                        Complaint Type
-                                    </th>
-                                    <th className="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 ">
-                                        Complaint Description
-                                    </th>
-                                    <th className="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 ">
-                                        Date
-                                    </th>
-                                    <th className="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 ">
-                                        Status
-                                    </th>
-                                    <th className="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 ">
-                                        Personel Assigned
-                                    </th>
-                                    <th className="font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 ">
-                                        Mark as Resolved
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {data.map((item) => (
-                                    <tr key={item.id}>
-                                        <td className="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 ">
-                                            {item.floorNumber}
-                                        </td>
-                                        <td className="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 ">
-                                            {item.roomNumber}
-                                        </td>
-                                        <td className="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 ">
-                                            {item.name}
-                                        </td>
-                                        <td className="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 ">
-                                            {item.complaintType}
-                                        </td>
-                                        <td className="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 ">
-                                            {item.complaintDescription}
-                                        </td>
-                                        <td className="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 ">
-                                            {item.date}
-                                        </td>
-                                        <td className="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 ">
-                                            {item.status}
-                                        </td>
-                                        <td className="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 ">
-                                            {item.personelAssigned}
-                                        </td>
-                                        <td className="p-3 bg-gray-200 text-gray-600 border border-gray-300 ">
-                                            <button className="bg-green-500 hover:bg-green-700 text-white px-2 rounded-full">
-                                               Resolved
-                                            </button>
-                                        </td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-  
-        </>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+      </>
     );
 };
 
