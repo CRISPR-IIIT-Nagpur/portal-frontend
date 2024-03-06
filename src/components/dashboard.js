@@ -84,10 +84,10 @@ const Dashboard = () => {
             <h1 className="text-black text-2xl font-bold text-center mb-20">Hi user, How you doing today?</h1>
           
           <div className="grid grid-wrap gap-12 grid-cols-3">
-            <div className="relative flex flex-col sm:w-[15rem] rounded-lg border-gray-400 bg-white shadow-lg px-4 bg-blue-200">
+            <div className="relative flex flex-col sm:w-[15rem] rounded-lg border-gray-400 bg-white shadow-lg px-4 bg-blue-100">
               <div className="flex-auto p-6">
                 <div className="mb-10 flex items-center justify-center overflow-hidden">
-                  <img src={require("../assets/network.png")} class="w-20 h-20"/>
+                  <img src={require("../assets/network.png")} class="object-contain w-20 h-20"/>
                 </div>
                 <div className="mb-4 flex justify-center">
                   <Link to="/registerNetworkComplaint">
@@ -101,10 +101,10 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-            <div className="relative flex flex-col sm:w-[15rem] rounded-lg border-gray-400 bg-white shadow-lg px-4 bg-blue-200">
+            <div className="relative flex flex-col sm:w-[15rem] rounded-lg border-gray-400 bg-white shadow-lg px-4 bg-blue-100">
               <div className="flex-auto p-6">
                 <div className="mb-10 flex flex-shrink-0 flex-grow-0 items-center justify-center overflow-hidden">
-                <img src={require("../assets/hostel.png")} class="w-20 h-20"/>
+                <img src={require("../assets/hostel.png")} class="object-contain w-20 h-20"/>
                 </div>
                 <div className="mb-4 flex justify-center">
                   <Link to="/registerMaintenanceComplaint">
@@ -118,10 +118,10 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-            <div className="relative flex flex-col sm:w-[15rem] rounded-lg border-gray-400 bg-white shadow-lg px-4 bg-blue-200">
+            <div className="relative flex flex-col sm:w-[15rem] rounded-lg border-gray-400 bg-white shadow-lg px-4 bg-blue-100">
               <div className="flex-auto p-6">
                 <div className="mb-10 flex flex-shrink-0 flex-grow-0 items-center justify-center overflow-hidden">
-                <img src={require("../assets/track.png")} class="w-20 h-20"/>
+                <img src={require("../assets/track.png")} class="object-contain w-20 h-20"/>
                 </div>
                 <div className="mb-4 flex justify-center">
                   <Link to="/trackComplaint">
@@ -135,10 +135,10 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-            <div className="relative flex flex-col sm:w-[15rem] rounded-lg border-gray-400 bg-white shadow-lg px-4 bg-blue-200">
+            <div className="relative flex flex-col sm:w-[15rem] rounded-lg border-gray-400 bg-white shadow-lg px-4 bg-blue-100">
               <div className="flex-auto p-6">
                 <div className="mb-10 flex flex-shrink-0 flex-grow-0 items-center justify-center overflow-hidden">
-                <img src={require("../assets/unblock.png")} class="w-20 h-20"/>
+                <img src={require("../assets/unblock.png")} class="object-contain w-20 h-20"/>
                 </div>
                 <div className="mb-4 flex justify-center">
                   <Link to="/unblock">
@@ -152,10 +152,10 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-            <div className="relative flex flex-col sm:w-[15rem] rounded-lg border-gray-400 bg-white shadow-lg px-4 bg-blue-200">
+            <div className="relative flex flex-col sm:w-[15rem] rounded-lg border-gray-400 bg-white shadow-lg px-4 bg-blue-100">
               <div className="flex-auto p-6">
                 <div className="mb-10 flex flex-shrink-0 flex-grow-0 items-center justify-center overflow-hidden">
-                <img src={require("../assets/report.png")} class="w-20 h-20"/>
+                <img src={require("../assets/report.png")} class="object-contain w-20 h-20"/>
                 </div>
                 <div className="mb-4 flex justify-center">
                   <Link to="/reportMischief">
@@ -169,10 +169,10 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-            <div className="relative flex flex-col sm:w-[15rem] rounded-lg border-gray-400 bg-white shadow-lg px-4 bg-blue-200">
+            <div className="relative flex flex-col sm:w-[15rem] rounded-lg border-gray-400 bg-white shadow-lg px-4 bg-blue-100">
               <div className="flex-auto p-6">
                 <div className="mb-10 flex flex-shrink-0 flex-grow-0 items-center justify-center overflow-hidden">
-                <img src={require("../assets/lost.png")} class="w-20 h-20"/>
+                <img src={require("../assets/lost.png")} class="object-contain w-20 h-20"/>
                 </div>
                 <div className="mb-4 flex justify-center">
                   <Link to="/lostandfound">
@@ -186,10 +186,10 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-            <div className="relative flex flex-col sm:w-[15rem] rounded-lg border-gray-400 bg-white shadow-lg px-4 bg-blue-200">
+            <div className="relative flex flex-col sm:w-[15rem] rounded-lg border-gray-400 bg-white shadow-lg px-4 bg-blue-100">
               <div className="flex-auto p-6">
                 <div className="mb-10 flex flex-shrink-0 flex-grow-0 items-center justify-center overflow-hidden">
-                <img src={require("../assets/help.png")} class="w-20 h-20"/>
+                <img src={require("../assets/help.png")} class="object-contain w-20 h-20"/>
                 </div>
                 <div className="mb-4 flex justify-center">
                   <Link to="/reportFriend">
@@ -203,10 +203,10 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-            <div className="relative flex flex-col sm:w-[15rem] rounded-lg border-gray-400 bg-white shadow-lg px-4 bg-blue-200">
+            <div className="relative flex flex-col sm:w-[15rem] rounded-lg border-gray-400 bg-white shadow-lg px-4 bg-blue-100">
               <div className="flex-auto p-6">
                 <div className="mb-10 flex flex-shrink-0 flex-grow-0 items-center justify-center overflow-hidden">
-                <img src={require("../assets/mental.png")} class="w-20 h-20"/>
+                <img src={require("../assets/mental.png")} class="object-contain w-20 h-20"/>
                 </div>
                 <div className="mb-4 flex justify-center">
                   <Link to="/reportSelf">
@@ -220,10 +220,10 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-            <div className="relative flex flex-col sm:w-[15rem] rounded-lg border-gray-400 bg-white shadow-lg px-4 bg-blue-200">
+            <div className="relative flex flex-col sm:w-[15rem] rounded-lg border-gray-400 bg-white shadow-lg px-4 bg-blue-100">
               <div className="flex-auto p-6">
                 <div className="mb-10 flex flex-shrink-0 flex-grow-0 items-center justify-center overflow-hidden">
-                <img src={require("../assets/pyq.png")} class="w-20 h-20"/>
+                <img src={require("../assets/pyq.png")} class="object-contain w-20 h-20"/>
                 </div>
                 <div className="mb-4 flex justify-center">
                   <Link to="/contributePYQ">
