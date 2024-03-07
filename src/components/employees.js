@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
 const Employees = () => {
     const [filteredData, setFilteredData] = useState([]);
     const [sortConfig, setSortConfig] = useState(null);
@@ -89,37 +88,51 @@ const Employees = () => {
 
     return (
         <>
-        <div class="flex min-h-screen flex-row">
-  <div class="w-64 shrink-0 -translate-x-full transform transition-transform duration-150 ease-in md:translate-x-0 md:drop-shadow-sm bg-black">
-  <div class="text-white text-2xl font-bold w-fit p-5">CRISPR</div>
-          <div className="grid w-fit">
-          <Link to="/employees" className="text-indigo-100 hover:text-white font-bold mr-4 p-4">Employees</Link>
-          <Link to="/export" className="text-indigo-100 hover:text-white font-bold mr-4 p-4">Export Data</Link>
-          <Link to="/complaints" className="text-indigo-100 hover:text-white font-bold mr-4 p-4">Complaints</Link>
-          <Link to="/" className="text-indigo-100 hover:text-white font-bold mr-4 p-4">Logout</Link>
+        <div className="grid grid-cols-[minmax(20%,20%)_auto] h-screen overflow-y-hidden">
+        <div className="top-0 left-0 m-0 flex flex-col bg-black text-white shadow-lg w-16 h-lvh">
+          <Link to="/adminDashboard">
+          <div className="group grid">
+          <div className="relative flex items-center justify-center h-10 w-10 mt-2 mb-2 mx-auto shadow-lg bg-white hover:bg-green-500 rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer"><img src={require('../assets/crispr.png')} className="h-10 w-10" alt="logo"/></div>
+          <span className="absolute w-auto p-2 my-2 min-w-max left-20 rounded-md shadow-md text-black bg-white text-xs font-bold transition-all duration-100 scale-0 origin-left group-hover:scale-100">Home</span>
           </div>
-  </div>
-
-  <main role="main" class="-ml-64 flex flex-grow flex-col transition-all duration-150 ease-in md:ml-0">
-    <div class="flex flex-grow flex-col bg-slate-100 p-4">
-      <div class="rounded-lg bg-white shadow">
-        <div class="px-4 py-5 sm:p-6 lg:p-8">
-          <div class="mb-5 justify-between sm:flex sm:items-center font-bold text-3xl">
-            Employees
+          </Link>
+          <Link to="/employees">
+          <div className="group grid">
+          <div className="relative flex items-center justify-center h-10 w-10 mt-2 mb-2 mx-auto shadow-lg bg-white hover:bg-green-500 rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer"><img src={require('../assets/employees.png')} className="h-6 w-6" alt="logo"/></div>
+          <span className="absolute w-auto p-2 my-2 min-w-max left-20 rounded-md shadow-md text-black bg-white text-xs font-bold transition-all duration-100 scale-0 origin-left group-hover:scale-100">Employees</span>
           </div>
-          <div class="mt-8 flex flex-col">
-            <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-              <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-                <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
-                  <table class="min-w-full divide-y divide-slate-300">
-                    <thead class="bg-black">
+          </Link>
+          <Link to="/complaints">
+          <div className="group grid">
+          <div className="relative flex items-center justify-center h-10 w-10 mt-2 mb-2 mx-auto shadow-lg bg-white hover:bg-green-500 rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer"><img src={require('../assets/complaints.png')} className="h-6 w-6" alt="logo"/></div>
+          <span className="absolute w-auto p-2 my-2 min-w-max left-20 rounded-md shadow-md text-black bg-white text-xs font-bold transition-all duration-100 scale-0 origin-left group-hover:scale-100">Complaints</span>
+          </div>
+          </Link>
+          <Link to="/export">
+          <div className="group grid">
+          <div className="relative flex items-center justify-center h-10 w-10 mt-2 mb-2 mx-auto shadow-lg bg-white hover:bg-green-500 rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer"><img src={require('../assets/export.png')} className="h-6 w-6" alt="logo"/></div>
+          <span className="absolute w-auto p-2 my-2 min-w-max left-20 rounded-md shadow-md text-black bg-white text-xs font-bold transition-all duration-100 scale-0 origin-left group-hover:scale-100">Export Data</span>
+          </div>
+          </Link>
+          <Link to="/" className="mt-auto">
+          <div className="group grid">
+          <div className="relative flex items-center justify-center h-12 w-12  mb-2 mx-auto shadow-lg bg-white hover:bg-green-500 rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer"><img src={require('../assets/logout.png')} className="h-6 w-6" alt="logo"/></div>
+          <span className="absolute w-auto p-2 my-2 min-w-max left-20 rounded-md shadow-md text-black bg-white text-xs font-bold transition-all duration-100 scale-0 origin-left group-hover:scale-100">Log Out</span>
+          </div>
+          </Link>
+        </div>
+        <div className="h-screen ml-4">
+          <p className="text-3xl text-center font-bold mt-10 mb-5">Employees</p>
+          <div className="overflow-y-auto h-5/6 mr-10 rounded-xl no-scrollbar"> 
+          <table class="min-w-full divide-y divide-slate-300">
+                    <thead class="bg-black sticky top-0">
                       <tr>
                         <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-white sm:pl-6">Name</th>
                         <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-white sm:pl-6">Type</th>
                         <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-white sm:pl-6">Ongoing</th>
                         <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-white sm:pl-6">Resolved</th>
                         <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-white sm:pl-6">Total</th>
-                        <th scope="col" class="relative py-3.5 pr-4 text-right text-sm font-semibold text-white sm:pr-6">Assign Complaints</th>
+                        <th scope="col" class="py-3.5 pr-4 text-right text-sm font-semibold text-white sm:pr-6">Assign Complaints</th>
                       </tr>
                     </thead>
                     <tbody class="divide-y divide-slate-200 bg-white">
@@ -144,15 +157,9 @@ const Employees = () => {
                         ))}
                     </tbody>
                   </table>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </main>
-</div>
+        </div>
       </>
     );
 };

@@ -12,6 +12,7 @@ const Login = () => {
     if (username === "admin" && password === "12345") {
       Navigate("/adminDashboard");
     }
+    else if (username === "emp" && password === "emp") Navigate('/employeeDashboard')
     else {
       Navigate("/dashboard");
     }
@@ -25,7 +26,7 @@ const Login = () => {
 
   return (
     <>
-<div class="flex min-h-screen w-screen w-full items-center justify-center text-gray-600 bg-gray-50">
+<div class="flex min-h-screen w-screen items-center justify-center text-gray-600 bg-gray-50">
   <div class="relative">
     <div class="hidden sm:block h-56 w-56 text-black absolute a-z-10 -left-20 -top-20">
       <svg

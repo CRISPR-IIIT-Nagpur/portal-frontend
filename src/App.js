@@ -15,6 +15,7 @@ import LostAndFound from './components/lostAndFound';
 import ReportFriend from './components/reportFriend';
 import ReportSelf from './components/reportSelf';
 import ContributePYQ from './components/contributePYQ';
+import EmployeeDashboard from './components/employeeDashboard';
 
 const App = () => {
   return (
@@ -35,6 +36,7 @@ const App = () => {
         <Route path="/reportFriend" element={<ReportFriend />} />
         <Route path="/reportSelf" element={<ReportSelf />} />
         <Route path="/contributePYQ" element={<ContributePYQ />} />
+        <Route path="/employeeDashboard" element={<EmployeeDashboard />} />
       </Routes>
     </Router>
   );

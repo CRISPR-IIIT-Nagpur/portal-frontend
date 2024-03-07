@@ -42,17 +42,77 @@ const TrackComplaint = () => {
 
         return (
                 <>
-                    <navbar className="flex flex-wrap items-center justify-between p-5 bg-black">
-                        <div className="flex items-center flex-shrink-0 text-white mr-6">
-                        <span className="font-semibold text-xl tracking-tight">CRISPR</span>
-                        </div>
-                        <div className="flex items-center">
-                        <Link to="/registerNetworkComplaint" className="text-indigo-100 hover:text-white font-bold mr-4">Register Complaints</Link>
-                        <Link to="/unblock" className="text-indigo-100 hover:text-white font-bold mr-4">Unblock Websites</Link>
-                        <Link to="/" className="text-indigo-100 hover:text-white font-bold mr-4">Logout</Link>
-                        </div>
-                    </navbar>
-                <div className="bg-gray-100 p-4 sm:p-8 md:p-10 h-screen">
+                        <div className="grid grid-cols-[minmax(20%,20%)_auto] h-screen overflow-y-hidden">
+        <div className="top-0 left-0 m-0 flex flex-col bg-black text-white shadow-lg w-16 h-lvh">
+      <Link to="/dashboard">
+      <div className="group grid">
+      <div className="relative flex items-center justify-center h-10 w-10 mt-2 mb-2 mx-auto shadow-lg bg-white hover:bg-green-500 rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer"><img src={require('../assets/crispr.png')} className="h-10 w-10" alt="logo"/></div>
+      <span className="absolute w-auto p-2 my-2 min-w-max left-20 rounded-md shadow-md text-black bg-white text-xs font-bold transition-all duration-100 scale-0 origin-left group-hover:scale-100">Home</span>
+      </div>
+      </Link>
+      <Link to="/registerNetworkComplaint">
+      <div className="group grid">
+      <div className="relative flex items-center justify-center h-10 w-10 mt-2 mb-2 mx-auto shadow-lg bg-white hover:bg-green-500 rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer"><img src={require('../assets/network.png')} className="h-6 w-6" alt="logo"/></div>
+      <span className="absolute w-auto p-2 my-2 min-w-max left-20 rounded-md shadow-md text-black bg-white text-xs font-bold transition-all duration-100 scale-0 origin-left group-hover:scale-100">Register Network Complaint</span>
+      </div>
+      </Link>
+      <Link to="/registerMaintenanceComplaint">
+      <div className="group grid">
+      <div className="relative flex items-center justify-center h-10 w-10 mt-2 mb-2 mx-auto shadow-lg bg-white hover:bg-green-500 rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer"><img src={require('../assets/hostel.png')} className="h-6 w-6" alt="logo"/></div>
+      <span className="absolute w-auto p-2 my-2 min-w-max left-20 rounded-md shadow-md text-black bg-white text-xs font-bold transition-all duration-100 scale-0 origin-left group-hover:scale-100">Hostel Complaints</span>
+      </div>
+      </Link>
+      <Link to="/trackComplaint">
+      <div className="group grid">
+      <div className="relative flex items-center justify-center h-10 w-10 mt-2 mb-2 mx-auto shadow-lg bg-white hover:bg-green-500 rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer"><img src={require('../assets/track.png')} className="h-6 w-6" alt="logo"/></div>
+      <span className="absolute w-auto p-2 my-2 min-w-max left-20 rounded-md shadow-md text-black bg-white text-xs font-bold transition-all duration-100 scale-0 origin-left group-hover:scale-100">Track Complaints</span>
+      </div>
+      </Link>
+      <Link to="/unblock">
+      <div className="group grid">
+      <div className="relative flex items-center justify-center h-10 w-10 mt-2 mb-2 mx-auto shadow-lg bg-white hover:bg-green-500 rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer"><img src={require('../assets/unblock.png')} className="h-6 w-6" alt="logo"/></div>
+      <span className="absolute w-auto p-2 my-2 min-w-max left-20 rounded-md shadow-md text-black bg-white text-xs font-bold transition-all duration-100 scale-0 origin-left group-hover:scale-100">Unblock Website</span>
+      </div>
+      </Link>
+      <Link to="/reportMischief">
+      <div className="group grid">
+      <div className="relative flex items-center justify-center h-10 w-10 mt-2 mb-2 mx-auto shadow-lg bg-white hover:bg-green-500 rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer"><img src={require('../assets/report.png')} className="h-6 w-6" alt="logo"/></div>
+      <span className="absolute w-auto p-2 my-2 min-w-max left-20 rounded-md shadow-md text-black bg-white text-xs font-bold transition-all duration-100 scale-0 origin-left group-hover:scale-100">Report Mischief</span>
+      </div>
+      </Link>
+      <Link to="/lostAndFound">
+      <div className="group grid">
+      <div className="relative flex items-center justify-center h-10 w-10 mt-2 mb-2 mx-auto shadow-lg bg-white hover:bg-green-500 rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer"><img src={require('../assets/lost.png')} className="h-6 w-6" alt="logo"/></div>
+      <span className="absolute w-auto p-2 my-2 min-w-max left-20 rounded-md shadow-md text-black bg-white text-xs font-bold transition-all duration-100 scale-0 origin-left group-hover:scale-100">Lost and Found</span>
+      </div>
+      </Link>
+      <Link to="/reportFriend">
+      <div className="group grid">
+      <div className="relative flex items-center justify-center h-10 w-10 mt-2 mb-2 mx-auto shadow-lg bg-white hover:bg-green-500 rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer"><img src={require('../assets/help.png')} className="h-6 w-6" alt="logo"/></div>
+      <span className="absolute w-auto p-2 my-2 min-w-max left-20 rounded-md shadow-md text-black bg-white text-xs font-bold transition-all duration-100 scale-0 origin-left group-hover:scale-100">Report a Friend in Distress</span>
+      </div>
+      </Link>
+      <Link to="/reportSelf">
+      <div className="group grid">
+      <div className="relative flex items-center justify-center h-10 w-10 mt-2 mb-2 mx-auto shadow-lg bg-white hover:bg-green-500 rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer"><img src={require('../assets/mental.png')} className="h-6 w-6" alt="logo"/></div>
+      <span className="absolute w-auto p-2 my-2 min-w-max left-20 rounded-md shadow-md text-black bg-white text-xs font-bold transition-all duration-100 scale-0 origin-left group-hover:scale-100">Request Mental Health Assistance</span>
+      </div>
+      </Link>
+      <Link to="/contributePYQ">
+      <div className="group grid">
+      <div className="relative flex items-center justify-center h-10 w-10 mt-2 mb-2 mx-auto shadow-lg bg-white hover:bg-green-500 rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer"><img src={require('../assets/pyq.png')} className="h-6 w-6" alt="logo"/></div>
+      <span className="absolute w-auto p-2 my-2 min-w-max left-20 rounded-md shadow-md text-black bg-white text-xs font-bold transition-all duration-100 scale-0 origin-left group-hover:scale-100">Contribute PYQ</span>
+      </div>
+      </Link>
+      <Link to="/" className="mt-auto">
+      <div className="group grid">
+      <div className="relative flex items-center justify-center h-12 w-12  mb-2 mx-auto shadow-lg bg-white hover:bg-green-500 rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer"><img src={require('../assets/logout.png')} className="h-6 w-6" alt="logo"/></div>
+      <span className="absolute w-auto p-2 my-2 min-w-max left-20 rounded-md shadow-md text-black bg-white text-xs font-bold transition-all duration-100 scale-0 origin-left group-hover:scale-100">Log Out</span>
+      </div>
+      </Link>
+    </div>
+    <div className="flex flex-col w-full h-full overflow-y-auto no-scrollbar">
+                <div className="bg-white h-screen mr-10 ml-10">
     <h1 className="text-2xl font-bold mt-20 mb-8">Complaints</h1>
     {complaints.length === 0 ? (
         <p className="ml-4 mt-2 text-gray-600 text-xl">
@@ -91,6 +151,8 @@ const TrackComplaint = () => {
             ))}
         </div>
     )}
+    </div>
+</div>
 </div>
                 </>
         );
