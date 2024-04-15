@@ -110,7 +110,7 @@ const ContributePYQ = () => {
               The "Unblock Website" section on our website facilitates requests
               for the removal of firewall restrictions on specific websites.
               Users can provide details such as the URL and reason for
-              unblocking, streamlining the process. Our team diligently reviews
+              unblocking, streamlining the process.    team diligently reviews
               each request to balance user needs with network security.
               Additionally, the section serves as an educational resource,
               promoting responsible internet usage. Overall, it reflects our
