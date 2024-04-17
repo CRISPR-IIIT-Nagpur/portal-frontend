@@ -108,6 +108,7 @@ const ContributePYQ = () => {
     </div>
       <section className="bg-white py-10 text-gray-800 h-full overflow-y-auto no-scrollbar">
         <div className="bg-white flex max-w-md flex-col rounded-lg lg:max-w-screen-xl lg:flex-row mr-10">
+          <div className="grid row-auto col-1">
           <div className="max-w-2xl px-4 lg:pr-24">
             <p className="mb-2 text-blue-600">Hostel Complaint Resolution</p>
             <h3 className="mb-5 text-3xl font-semibold">Contribute PYQs</h3>
@@ -139,6 +140,147 @@ const ContributePYQ = () => {
                 </span>
               </div>
             </div>
+          </div>
+          <table class="divide-y divide-slate-300 mx-5">
+                    <thead class="bg-black sticky top-0">
+                      <tr>
+                        <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-white sm:pl-6">Course code</th>
+                        <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-white sm:pl-6">Year</th>
+                        <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-white sm:pl-6">Semester</th>
+                        <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-white sm:pl-6">Exam</th>
+                        <th scope="col" class="py-3.5 pr-4 text-right text-sm font-semibold text-white sm:pr-6">Delete</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">CS101</td>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">2020</td>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">Semester 1</td>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">Sessional 1</td>
+                        <td class="pr-4 py-3 text-right text-sm font-medium text-gray-900 sm:pr-6">
+                            <button
+                                className="inline-block cursor-pointer select-none rounded-md border border-black bg-black py-2 px-5 text-center align-middle text-xs text-white shadow hover:border-indigo-600 hover:bg-indigo-600 hover:text-white focus:border-indigo-600 focus:bg-indigo-600 focus:text-white focus:shadow-none"
+                                type="submit"
+                            >
+                                Delete
+                            </button>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">CS101</td>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">2020</td>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">Semester 1</td>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">Sessional 1</td>
+                        <td class="pr-4 py-3 text-right text-sm font-medium text-gray-900 sm:pr-6">
+                            <button
+                                className="inline-block cursor-pointer select-none rounded-md border border-black bg-black py-2 px-5 text-center align-middle text-xs text-white shadow hover:border-indigo-600 hover:bg-indigo-600 hover:text-white focus:border-indigo-600 focus:bg-indigo-600 focus:text-white focus:shadow-none"
+                                type="submit"
+                            >
+                                Delete
+                            </button>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">CS101</td>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">2020</td>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">Semester 1</td>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">Sessional 1</td>
+                        <td class="pr-4 py-3 text-right text-sm font-medium text-gray-900 sm:pr-6">
+                            <button
+                                className="inline-block cursor-pointer select-none rounded-md border border-black bg-black py-2 px-5 text-center align-middle text-xs text-white shadow hover:border-indigo-600 hover:bg-indigo-600 hover:text-white focus:border-indigo-600 focus:bg-indigo-600 focus:text-white focus:shadow-none"
+                                type="submit"
+                            >
+                                Delete
+                            </button>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">CS101</td>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">2020</td>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">Semester 1</td>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">Sessional 1</td>
+                        <td class="pr-4 py-3 text-right text-sm font-medium text-gray-900 sm:pr-6">
+                            <button
+                                className="inline-block cursor-pointer select-none rounded-md border border-black bg-black py-2 px-5 text-center align-middle text-xs text-white shadow hover:border-indigo-600 hover:bg-indigo-600 hover:text-white focus:border-indigo-600 focus:bg-indigo-600 focus:text-white focus:shadow-none"
+                                type="submit"
+                            >
+                                Delete
+                            </button>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">CS101</td>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">2020</td>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">Semester 1</td>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">Sessional 1</td>
+                        <td class="pr-4 py-3 text-right text-sm font-medium text-gray-900 sm:pr-6">
+                            <button
+                                className="inline-block cursor-pointer select-none rounded-md border border-black bg-black py-2 px-5 text-center align-middle text-xs text-white shadow hover:border-indigo-600 hover:bg-indigo-600 hover:text-white focus:border-indigo-600 focus:bg-indigo-600 focus:text-white focus:shadow-none"
+                                type="submit"
+                            >
+                                Delete
+                            </button>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">CS101</td>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">2020</td>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">Semester 1</td>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">Sessional 1</td>
+                        <td class="pr-4 py-3 text-right text-sm font-medium text-gray-900 sm:pr-6">
+                            <button
+                                className="inline-block cursor-pointer select-none rounded-md border border-black bg-black py-2 px-5 text-center align-middle text-xs text-white shadow hover:border-indigo-600 hover:bg-indigo-600 hover:text-white focus:border-indigo-600 focus:bg-indigo-600 focus:text-white focus:shadow-none"
+                                type="submit"
+                            >
+                                Delete
+                            </button>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">CS101</td>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">2020</td>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">Semester 1</td>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">Sessional 1</td>
+                        <td class="pr-4 py-3 text-right text-sm font-medium text-gray-900 sm:pr-6">
+                            <button
+                                className="inline-block cursor-pointer select-none rounded-md border border-black bg-black py-2 px-5 text-center align-middle text-xs text-white shadow hover:border-indigo-600 hover:bg-indigo-600 hover:text-white focus:border-indigo-600 focus:bg-indigo-600 focus:text-white focus:shadow-none"
+                                type="submit"
+                            >
+                                Delete
+                            </button>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">CS101</td>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">2020</td>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">Semester 1</td>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">Sessional 1</td>
+                        <td class="pr-4 py-3 text-right text-sm font-medium text-gray-900 sm:pr-6">
+                            <button
+                                className="inline-block cursor-pointer select-none rounded-md border border-black bg-black py-2 px-5 text-center align-middle text-xs text-white shadow hover:border-indigo-600 hover:bg-indigo-600 hover:text-white focus:border-indigo-600 focus:bg-indigo-600 focus:text-white focus:shadow-none"
+                                type="submit"
+                            >
+                                Delete
+                            </button>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">CS101</td>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">2020</td>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">Semester 1</td>
+                        <td class="pl-4 pr-3 py-3 text-sm font-medium text-gray-900 sm:pl-6">Sessional 1</td>
+                        <td class="pr-4 py-3 text-right text-sm font-medium text-gray-900 sm:pr-6">
+                            <button
+                                className="inline-block cursor-pointer select-none rounded-md border border-black bg-black py-2 px-5 text-center align-middle text-xs text-white shadow hover:border-indigo-600 hover:bg-indigo-600 hover:text-white focus:border-indigo-600 focus:bg-indigo-600 focus:text-white focus:shadow-none"
+                                type="submit"
+                            >
+                                Delete
+                            </button>
+                        </td>
+                        </tr>
+
+                    </tbody>
+                  </table>
           </div>
           <div className="border border-gray-100 shadow-gray-500/20 mt-8 mb-8 max-w-md bg-white shadow-sm sm:rounded-lg sm:shadow-lg lg:mt-0">
             <div className="relative border-b border-gray-300 p-4 py-8 sm:px-8">
@@ -228,6 +370,13 @@ const ContributePYQ = () => {
                     required/>
                 </div>
                 <div className="flex justify-center">
+                  <button
+                    className="inline-block w-40 cursor-pointer select-none rounded-md border border-black bg-black py-2 px-5 text-center align-middle text-xs text-white shadow hover:border-indigo-600 hover:bg-indigo-600 hover:text-white focus:border-indigo-600 focus:bg-indigo-600 focus:text-white focus:shadow-none"
+                    type="submit"
+                  >
+                    Add
+                  </button>
+                  &nbsp;&nbsp;&nbsp;
                   <button
                     className="inline-block w-40 cursor-pointer select-none rounded-md border border-black bg-black py-2 px-5 text-center align-middle text-xs text-white shadow hover:border-indigo-600 hover:bg-indigo-600 hover:text-white focus:border-indigo-600 focus:bg-indigo-600 focus:text-white focus:shadow-none"
                     type="submit"
