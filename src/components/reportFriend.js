@@ -98,17 +98,9 @@ const ReportFriend = () => {
         <div className="bg-white mr-10 flex max-w-md flex-col rounded-lg lg:max-w-screen-xl lg:flex-row">
           <div className="max-w-2xl px-4 lg:pr-24">
             <p className="mb-2 text-blue-600">Hostel Complaint Resolution</p>
-            <h3 className="mb-5 text-3xl font-semibold">Unblock website</h3>
+            <h3 className="mb-5 text-3xl font-semibold">Report a Friend in Distress</h3>
             <p className="text-[18px] mb-10 text-md text-gray-600">
-              The "Unblock Website" section on our website facilitates requests
-              for the removal of firewall restrictions on specific websites.
-              Users can provide details such as the URL and reason for
-              unblocking, streamlining the process. Our team diligently reviews
-              each request to balance user needs with network security.
-              Additionally, the section serves as an educational resource,
-              promoting responsible internet usage. Overall, it reflects our
-              commitment to user-centric solutions and proactive risk
-              management.
+            Does a friend seem withdrawn or overwhelmed?  Sometimes the best thing you can do is reach out for help.  Our "Report a Friend in Distress" feature allows you to confidentially share your concerns with our support team.  This dedicated team is here to listen and offer resources to connect your friend with the help they might need.  Remember, you're a pillar of support, and by letting us know, you can be part of the solution in getting your friend back on track.
             </p>
             <div className="mb-5 flex font-medium">
               <div className="mr-4">

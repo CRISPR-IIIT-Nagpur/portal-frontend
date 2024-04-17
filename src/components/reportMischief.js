@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const ReportMischief = () => {
   const [btid, setBtid] = useState("");
   const [description, setDescription] = useState("");
+  const [file, setFile] = useState(null);
   const [submitted, setSubmitted] = useState(false);
   const handleBtidChange = (e) => {
     setBtid(e.target.value);
@@ -11,6 +12,10 @@ const ReportMischief = () => {
 
   const handleDescriptionChange = (e) => {
     setDescription(e.target.value);
+  };
+
+  const handlefileChange = (e) => {
+    setFile(e.target.value);
   };
 
   const handleSubmit = (e) => {
@@ -93,17 +98,9 @@ const ReportMischief = () => {
         <div className="flex max-w-md flex-col rounded-lg lg:max-w-screen-xl lg:flex-row">
           <div className="max-w-2xl">
             <p className="mb-2 text-blue-600">Hostel Complaint Resolution</p>
-            <h3 className="mb-5 text-3xl font-semibold">Unblock website</h3>
+            <h3 className="mb-5 text-3xl font-semibold">Report Mischief</h3>
             <p className="text-[18px] mb-10 text-md text-gray-600 mr-5">
-              The "Unblock Website" section on our website facilitates requests
-              for the removal of firewall restrictions on specific websites.
-              Users can provide details such as the URL and reason for
-              unblocking, streamlining the process. Our team diligently reviews
-              each request to balance user needs with network security.
-              Additionally, the section serves as an educational resource,
-              promoting responsible internet usage. Overall, it reflects our
-              commitment to user-centric solutions and proactive risk
-              management.
+            We're committed to creating a safe and positive space for everyone on our platform. If you witness or experience any kind of inappropriate behavior, our "Report Mischief" form makes reporting it quick and easy.  This streamlined tool allows you to share details of the incident, including the date, time, and specific nature of the mischief. You can also attach any evidence you may have, such as screenshots or witness information.  Just like other features we offer, this reporting tool prioritizes both user experience and a secure environment for all.
             </p>
             <div className="mb-5 flex font-medium">
               <div className="mr-4">
@@ -165,8 +162,18 @@ const ReportMischief = () => {
                     rows="4"
                     className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-black"
                     value={description}
-                    onChange={(e) => setDescription(e.target.value)}
+                    onChange={handleDescriptionChange}
                   ></textarea>
+                  <label className="block mt-2 text-xs text-gray-500">
+                    Upload any evidence you may have
+                  </label>
+                  <input
+                    type="file"
+                    className="block w-full p-3 rounded bg-gray-100 border border-transparent focus:outline-none"
+                    onChange={handlefileChange}
+                    value={file}
+                  />
+
                 </div>
                 <div className="flex justify-center">
                   <button

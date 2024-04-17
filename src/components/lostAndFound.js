@@ -89,17 +89,9 @@ const LostAndFound = () => {
         <div className="bg-white mr-10 flex max-w-md flex-col rounded-lg lg:max-w-screen-xl lg:flex-row">
           <div className="max-w-2xl px-4 lg:pr-24">
             <p className="mb-2 text-blue-600">Hostel Complaint Resolution</p>
-            <h3 className="mb-5 text-3xl font-semibold">Unblock website</h3>
+            <h3 className="mb-5 text-3xl font-semibold">Lost and Found</h3>
             <p className="text-[18px] mb-10 text-md text-gray-600">
-              The "Unblock Website" section on our website facilitates requests
-              for the removal of firewall restrictions on specific websites.
-              Users can provide details such as the URL and reason for
-              unblocking, streamlining the process. Our team diligently reviews
-              each request to balance user needs with network security.
-              Additionally, the section serves as an educational resource,
-              promoting responsible internet usage. Overall, it reflects our
-              commitment to user-centric solutions and proactive risk
-              management.
+            Lost something in the gym or found a mystery phone? Our "Lost and Found" system reunites lost items with their owners. Simply report lost or found items through our user-friendly online form for a quick and easy solution. Let's build a more helpful community together!
             </p>
             <div className="mb-5 flex font-medium">
               <div className="mr-4">

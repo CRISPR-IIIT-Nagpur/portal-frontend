@@ -96,8 +96,7 @@ const  RegisterMaintenanceComplaint= () => {
               Submit Your Complaint
             </h3>
             <p className="mb-16 text-md text-gray-600">
-              Please use the form on the right to register your complaint
-              regarding the internet connection in the hostel. We strive to
+              Please use the form on the right to register your maintenance related complaints in the hostel. We strive to
               provide the best services possible and appreciate your feedback.
             </p>
             <div className="mb-5 flex font-medium">

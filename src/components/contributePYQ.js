@@ -6,6 +6,7 @@ const ContributePYQ = () => {
   const [year, setYear] = useState("");
   const [examType, setExamType] = useState("S1");
   const [semester, setSemester] = useState("1");
+  const [contributor, setContributor] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
 
@@ -28,6 +29,10 @@ const ContributePYQ = () => {
 
   const handleSemesterChange = (e) => {
     setSemester(e.target.value);
+  }
+
+  const handleContributorChange = (e) => {
+    setContributor(e.target.value);
   }
 
   return (
@@ -105,17 +110,9 @@ const ContributePYQ = () => {
         <div className="bg-white flex max-w-md flex-col rounded-lg lg:max-w-screen-xl lg:flex-row mr-10">
           <div className="max-w-2xl px-4 lg:pr-24">
             <p className="mb-2 text-blue-600">Hostel Complaint Resolution</p>
-            <h3 className="mb-5 text-3xl font-semibold">Unblock website</h3>
+            <h3 className="mb-5 text-3xl font-semibold">Contribute PYQs</h3>
             <p className="text-[18px] mb-10 text-md text-gray-600">
-              The "Unblock Website" section on our website facilitates requests
-              for the removal of firewall restrictions on specific websites.
-              Users can provide details such as the URL and reason for
-              unblocking, streamlining the process.    team diligently reviews
-              each request to balance user needs with network security.
-              Additionally, the section serves as an educational resource,
-              promoting responsible internet usage. Overall, it reflects our
-              commitment to user-centric solutions and proactive risk
-              management.
+            Past year questions (PYQs) are gold for exam prep, but finding them can be a struggle. Be the hero your study buddies need by contributing PYQs to our platform! It's a breeze – just submit the questions, subject, and year. Together, we can build a massive PYQ library that helps everyone ace their exams. So join the movement, share your knowledge, and dominate that next test!
             </p>
             <div className="mb-5 flex font-medium">
               <div className="mr-4">
@@ -217,6 +214,18 @@ const ContributePYQ = () => {
                     Upload PDF
                   </label>
                   <input type="file" accept=".pdf"/>
+                </div>
+                <div className="mb-4">
+                  <label className="block mb-2 text-sm font-medium text-gray-600">
+                    Contributed by
+                  </label>
+                  <input
+                    type="text"
+                    value={contributor}
+                    onChange={handleContributorChange}
+                    className="w-full p-2 border border-gray-300 rounded-md"
+                    placeholder="Your Name"
+                    required/>
                 </div>
                 <div className="flex justify-center">
                   <button
