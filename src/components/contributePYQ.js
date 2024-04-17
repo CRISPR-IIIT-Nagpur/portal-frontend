@@ -141,7 +141,7 @@ const ContributePYQ = () => {
               </div>
             </div>
           </div>
-          <table class="divide-y divide-slate-300 mx-5">
+          {/* <table class="divide-y divide-slate-300 mx-5">
                     <thead class="bg-black sticky top-0">
                       <tr>
                         <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-white sm:pl-6">Course code</th>
@@ -280,7 +280,7 @@ const ContributePYQ = () => {
                         </tr>
 
                     </tbody>
-                  </table>
+                  </table> */}
           </div>
           <div className="border border-gray-100 shadow-gray-500/20 mt-8 mb-8 max-w-md bg-white shadow-sm sm:rounded-lg sm:shadow-lg lg:mt-0">
             <div className="relative border-b border-gray-300 p-4 py-8 sm:px-8">
@@ -370,13 +370,13 @@ const ContributePYQ = () => {
                     required/>
                 </div>
                 <div className="flex justify-center">
-                  <button
+                  {/* <button
                     className="inline-block w-40 cursor-pointer select-none rounded-md border border-black bg-black py-2 px-5 text-center align-middle text-xs text-white shadow hover:border-indigo-600 hover:bg-indigo-600 hover:text-white focus:border-indigo-600 focus:bg-indigo-600 focus:text-white focus:shadow-none"
                     type="submit"
                   >
                     Add
-                  </button>
-                  &nbsp;&nbsp;&nbsp;
+                  </button> */}
+                  {/* &nbsp;&nbsp;&nbsp; */}
                   <button
                     className="inline-block w-40 cursor-pointer select-none rounded-md border border-black bg-black py-2 px-5 text-center align-middle text-xs text-white shadow hover:border-indigo-600 hover:bg-indigo-600 hover:text-white focus:border-indigo-600 focus:bg-indigo-600 focus:text-white focus:shadow-none"
                     type="submit"
