@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import FormData from "form-data";
 
 const ContributePYQ = () => {
   const [courseCode, setCourseCode] = useState("");
@@ -7,11 +9,54 @@ const ContributePYQ = () => {
   const [examType, setExamType] = useState("S1");
   const [semester, setSemester] = useState("1");
   const [contributor, setContributor] = useState("");
+  const [pdf,setPdf] = useState();
   const [submitted, setSubmitted] = useState(false);
-
-
-  const handleSubmit = (e) => {
+  /*const [data, setData]= useState({
+    courseCode: "CSL101",
+    year: 2022-23,
+    examType: 'ES',
+    semester: '1',
+    contributor: 'BT23CSE178',
+    pdf: ''
+  })*/
+  
+  /*const handleChange= (e) => {
+    setData({
+      ...data,
+      [e.target.name]: e.target.value,
+      
+    })
+  }*/
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const formdata= new FormData()
+    formdata.append('courseCode', courseCode)
+    formdata.append('year', year)
+    formdata.append('examType', examType)
+    formdata.append('contributor', contributor)
+    formdata.append('semester', semester)
+    formdata.append('pdf', pdf)
+
+    const config = {
+      headers: {
+        'content-type': 'multipart/form-data',
+      },
+    };
+
+
+  try {
+
+    const response= await axios.post("http://localhost:3001/uploads", formdata, config)
+    console.log(response.data)
+
+    }
+   catch(error) {
+       
+        // The request was made and the server responded with a status code
+        // that falls out of the range of 2xx
+        console.log(error);
+    };
+    
     setSubmitted(true);
   };
 
@@ -33,6 +78,10 @@ const ContributePYQ = () => {
 
   const handleContributorChange = (e) => {
     setContributor(e.target.value);
+  }
+
+  const handlePdfChange = (e) => {
+    setPdf(e.target.files[0]);
   }
 
   return (
@@ -298,6 +347,7 @@ const ContributePYQ = () => {
                     Course Code
                   </label>
                   <input
+                    name= "courseCode"
                     type="text"
                     value={courseCode}
                     onChange={handleCourseCodeChange}
@@ -310,6 +360,7 @@ const ContributePYQ = () => {
                     Year
                   </label>
                   <input
+                    name= "year"
                     type="text"
                     value={year}
                     onChange={handleYearChange}
@@ -322,6 +373,8 @@ const ContributePYQ = () => {
                     Exam Type
                   </label>
                   <select
+                    type= "text"
+                    name= "examType"
                     value={examType}
                     onChange={handleExamTypeChange}
                     className="w-full p-2 border border-gray-300 rounded-md"
@@ -336,6 +389,7 @@ const ContributePYQ = () => {
                     Semester
                   </label>
                   <select
+                    name= "semester"
                     value={semester}
                     onChange={handleSemesterChange}
                     className="w-full p-2 border border-gray-300 rounded-md"
@@ -355,7 +409,7 @@ const ContributePYQ = () => {
                   <label className="block mb-2 text-sm font-medium text-gray-600">
                     Upload PDF
                   </label>
-                  <input type="file" accept=".pdf"/>
+                  <input name= "pdf" type="file" accept=".pdf" onChange={handlePdfChange}/>
                 </div>
                 <div className="mb-4">
                   <label className="block mb-2 text-sm font-medium text-gray-600">
@@ -363,6 +417,7 @@ const ContributePYQ = () => {
                   </label>
                   <input
                     type="text"
+                    name= "contributor"
                     value={contributor}
                     onChange={handleContributorChange}
                     className="w-full p-2 border border-gray-300 rounded-md"
