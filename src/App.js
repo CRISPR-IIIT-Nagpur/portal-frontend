@@ -16,6 +16,7 @@ import ReportFriend from './components/reportFriend';
 import ReportSelf from './components/reportSelf';
 import ContributePYQ from './components/contributePYQ';
 import EmployeeDashboard from './components/employeeDashboard';
+import ModeratorDashboard from './components/moderatorDashboard';
 
 const App = () => {
   return (
@@ -37,6 +38,7 @@ const App = () => {
         <Route path="/reportSelf" element={<ReportSelf />} />
         <Route path="/contributePYQ" element={<ContributePYQ />} />
         <Route path="/employeeDashboard" element={<EmployeeDashboard />} />
+        <Route path="/moderatorDashboard" element={<ModeratorDashboard />} />
       </Routes>
     </Router>
   );

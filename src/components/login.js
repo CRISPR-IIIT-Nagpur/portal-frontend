@@ -13,6 +13,7 @@ const Login = () => {
       Navigate("/adminDashboard");
     }
     else if (username === "emp" && password === "emp") Navigate('/employeeDashboard')
+    else if (username === "mod" && password === "mod") Navigate('/moderatorDashboard')
     else {
       Navigate("/dashboard");
     }
