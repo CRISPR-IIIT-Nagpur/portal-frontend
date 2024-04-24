@@ -9,13 +9,8 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     
-    if (username === "admin" && password === "12345") {
-      Navigate("/adminDashboard");
-    }
-    else if (username === "emp" && password === "emp") Navigate('/employeeDashboard')
-    else if (username === "mod" && password === "mod") Navigate('/moderatorDashboard')
-    else {
-      Navigate("/dashboard");
+    if (username === "crispr" && password === "crispr") {
+      Navigate("/contributepyq");
     }
   };
   const handleUsername = (e) => {
