@@ -48,7 +48,7 @@ const Login = () => {
       return;
     }
 
-    axios.post("http://localhost:7979/api/updateUserName", {
+    axios.post("http://192.168.77.84:7979/api/updateUserName", {
       params: {
       username: username,
       name: name
