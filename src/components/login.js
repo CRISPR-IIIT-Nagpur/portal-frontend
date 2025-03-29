@@ -8,6 +8,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [showNameModal, setShowNameModal] = useState(false);
   const [name, setName] = useState("");
+  const [userRole, setUserRole] = useState(""); // Added to store role between requests
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -20,6 +21,8 @@ const Login = () => {
       if (response.status === 206) {
         // Show the name input modal
         setShowNameModal(true);
+        // Store role for later use
+        setUserRole(response.data.role);
       } else {
         // Normal login flow
         localStorage.setItem('userName', response.data.name);
@@ -42,31 +45,28 @@ const Login = () => {
   };
 
   const handleNameSubmit = () => {
-    // Validate name
     if (!name.trim()) {
       alert("Please enter your name");
       return;
     }
 
     axios.post("http://192.168.77.84:7979/api/updateUserName", {
-      params: {
-      username: username,
-      name: name
-      }
+      name: name,
+      username: username
     })
-      .then(response => {
+      .then(response2 => {
         localStorage.setItem('userName', name);
         localStorage.setItem('email', username);
-        localStorage.setItem('role', response.data.role);
+        localStorage.setItem('role', userRole);
 
-        if (response.data.role === "admin") {
+        if (userRole === "admin") {
           Navigate("/adminDashboard");
-        } else if (response.data.role === "employee") {
+        } else if (userRole === "employee") {
           Navigate("/employeeDashboard");
-        } else if (response.data.role === "moderator") {
+        } else if (userRole === "moderator") {
           Navigate("/moderatorDashboard");
         }
-        else if (response.data.role === "student") {
+        else if (userRole === "student") {
           Navigate("/Dashboard");
         }
 
