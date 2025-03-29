@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Login from './components/login';
 import Dashboard from './components/dashboard';
 import RegisterNetworkComplaint from './components/registerNetworkComplaint';
@@ -18,27 +18,51 @@ import ContributePYQ from './components/contributePYQ';
 import EmployeeDashboard from './components/employeeDashboard';
 import ModeratorDashboard from './components/moderatorDashboard';
 
+// Protected Route Component
+const ProtectedRoute = ({ element, allowedRoles }) => {
+  const userName = localStorage.getItem('userName');
+  const userRole = localStorage.getItem('role');
+  if (!userName) {
+    return <Navigate to="/" replace />;
+  }
+  if (allowedRoles && !allowedRoles.includes(userRole)) {
+    return <Navigate to="/" replace />;
+  }
+  return element;
+};
+
 const App = () => {
   return (
     <Router>
       <Routes>
+        {/* Public Route */}
         <Route path="/" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/registerNetworkComplaint" element={<RegisterNetworkComplaint />} />
-        <Route path="/trackComplaint" element={<TrackComplaint />} />
-        <Route path="/unblock" element={<Unblock />} />
-        <Route path="/adminDashboard" element={<AdminDashboard />} />
-        <Route path="/export" element={<Export />} />
-        <Route path="/employees" element={<Employees />} />
-        <Route path="/complaints" element={<Complaints />} />
-        <Route path="/registerMaintenanceComplaint" element={<RegisterMaintenanceComplaint />} />
-        <Route path="/reportMischief" element={<ReportMischief />} />
-        <Route path="/lostAndFound" element={<LostAndFound />} />
-        <Route path="/reportFriend" element={<ReportFriend />} />
-        <Route path="/reportSelf" element={<ReportSelf />} />
-        <Route path="/contributePYQ" element={<ContributePYQ />} />
-        <Route path="/employeeDashboard" element={<EmployeeDashboard />} />
-        <Route path="/moderatorDashboard" element={<ModeratorDashboard />} />
+
+        {/* Protected Routes with role-based access */}
+        <Route path="/dashboard" element={<ProtectedRoute element={<Dashboard />} allowedRoles={['student']}/>} />
+        <Route path="/registerNetworkComplaint" element={<ProtectedRoute element={<RegisterNetworkComplaint />} allowedRoles={['student']}/>} />
+        <Route path="/trackComplaint" element={<ProtectedRoute element={<TrackComplaint />} allowedRoles={['student']}/>} />
+        <Route path="/unblock" element={<ProtectedRoute element={<Unblock />} />} />
+
+        {/* Admin only routes */}
+        <Route path="/adminDashboard" element={<ProtectedRoute element={<AdminDashboard />} allowedRoles={['admin']} />} />
+        <Route path="/export" element={<ProtectedRoute element={<Export />} allowedRoles={['admin']} />} />
+        <Route path="/employees" element={<ProtectedRoute element={<Employees />} allowedRoles={['admin']} />} />
+        <Route path="/complaints" element={<ProtectedRoute element={<Complaints />} allowedRoles={['admin']} />} />
+
+        {/* Employee only routes */}
+        <Route path="/employeeDashboard" element={<ProtectedRoute element={<EmployeeDashboard />} allowedRoles={['employee']} />} />
+
+        {/* Moderator only routes */}
+        <Route path="/moderatorDashboard" element={<ProtectedRoute element={<ModeratorDashboard />} allowedRoles={['moderator']} />} />
+
+        {/* Other routes - customize based on your requirements */}
+        <Route path="/registerMaintenanceComplaint" element={<ProtectedRoute element={<RegisterMaintenanceComplaint />} />} />
+        <Route path="/reportMischief" element={<ProtectedRoute element={<ReportMischief />} />} />
+        <Route path="/lostAndFound" element={<ProtectedRoute element={<LostAndFound />} />} />
+        <Route path="/reportFriend" element={<ProtectedRoute element={<ReportFriend />} />} />
+        <Route path="/reportSelf" element={<ProtectedRoute element={<ReportSelf />} />} />
+        <Route path="/contributePYQ" element={<ProtectedRoute element={<ContributePYQ />} />} />
       </Routes>
     </Router>
   );

@@ -31,7 +31,11 @@ const AdminDashboard = () => {
         <span className="absolute w-auto p-2 my-2 min-w-max left-20 rounded-md shadow-md text-black bg-white text-xs font-bold transition-all duration-100 scale-0 origin-left group-hover:scale-100">Export Data</span>
         </div>
         </Link>
-        <Link to="/" className="mt-auto">
+        <Link to="/" className="mt-auto"
+        onClick={() => {
+          localStorage.clear();
+        }}
+        >
         <div className="group grid">
         <div className="relative flex items-center justify-center h-12 w-12  mb-2 mx-auto shadow-lg bg-white hover:bg-green-500 rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer"><img src={require('../assets/logout.png')} className="h-6 w-6" alt="logo"/></div>
         <span className="absolute w-auto p-2 my-2 min-w-max left-20 rounded-md shadow-md text-black bg-white text-xs font-bold transition-all duration-100 scale-0 origin-left group-hover:scale-100">Log Out</span>
@@ -163,6 +167,10 @@ const AdminDashboard = () => {
       </div>
       </div>
       </div>
+      <footer className="text-white bg-black text-center mt-auto flex items-center justify-center space-x-2">
+        <p className="text-sm">Powered by</p>
+        <img src={require("../assets/crispr_alt.png")} className="h-24 w-24" alt="logo" />
+      </footer>
     </>
   );
 }

@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 
@@ -9,13 +10,33 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     
-    if (username === "admin" && password === "12345") {
+    if (username === "admin" && password === "admin") {
       Navigate("/adminDashboard");
     }
     else if (username === "emp" && password === "emp") Navigate('/employeeDashboard')
     else if (username === "mod" && password === "mod") Navigate('/moderatorDashboard')
     else {
-      Navigate("/dashboard");
+      axios.post("http://localhost:4500/login", {
+        username: username,
+        password: password,
+      }).then(response => {
+        localStorage.setItem('userName', response.data.name);
+        localStorage.setItem('email', username);
+        localStorage.setItem('role', response.data.role);
+          if (response.data.role === "admin") {
+            Navigate("/adminDashboard");
+          } else if (response.data.role === "employee") {
+            Navigate("/employeeDashboard");
+          } else if (response.data.role === "moderator") {
+            Navigate("/moderatorDashboard");
+          }
+          else if (response.data.role === "student") {
+            Navigate("/Dashboard");
+          }
+      
+      }).catch(error => {
+          alert("Wrong credentials");
+      });
     }
   };
   const handleUsername = (e) => {
