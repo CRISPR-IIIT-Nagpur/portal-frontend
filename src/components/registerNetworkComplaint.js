@@ -29,7 +29,7 @@ const RegisterNetworkComplaint = () => {
     setError(null);
 
     try {
-      const response = await axios.post('http://localhost:4500/api/network/registerComplaint', {
+      const response = await axios.post('http://192.168.77.84:7979/api/network/registerComplaint', {
         place,
         floor,
         networkType,
@@ -283,7 +283,7 @@ const RegisterNetworkComplaint = () => {
                         )}
                       </select>
                     </div>
-                     <div className="mb-4">
+                    <div className="mb-4">
                       <label className="block mb-2 text-sm font-medium text-gray-600">
                         Room No
                       </label>
