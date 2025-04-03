@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 
 
 const AdminDashboard = () => {
+  const { logout} = useAuth0();
   return (
     <>
       <div className="grid grid-cols-[minmax(20%,20%)_auto] h-screen overflow-y-hidden">
@@ -34,7 +36,9 @@ const AdminDashboard = () => {
         <Link to="/" className="mt-auto"
         onClick={() => {
           localStorage.clear();
-        }}
+          logout({ logoutParams: { returnTo: window.location.origin 
+          }});
+          }}
         >
         <div className="group grid">
         <div className="relative flex items-center justify-center h-12 w-12  mb-2 mx-auto shadow-lg bg-white hover:bg-green-500 rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer"><img src={require('../assets/logout.png')} className="h-6 w-6" alt="logo"/></div>

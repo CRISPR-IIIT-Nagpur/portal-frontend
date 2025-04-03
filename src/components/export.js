@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { jsPDF } from "jspdf";
 import autoTable from "jspdf-autotable";
-
+import { useAuth0 } from "@auth0/auth0-react";
 const Export = () => {
+  const { logout } = useAuth0();
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -169,6 +170,8 @@ const Export = () => {
           <Link to="/" className="mt-auto"
             onClick={() => {
               localStorage.clear();
+              logout({ logoutParams: { returnTo: window.location.origin 
+              }});
             }}
           >
             <div className="group grid">

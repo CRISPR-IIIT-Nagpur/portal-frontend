@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
+import { useAuth0 } from "@auth0/auth0-react";
 const RegisterNetworkComplaint = () => {
+  const { logout } = useAuth0();
   const [place, setPlace] = useState("hostel");
   const [floor, setFloor] = useState("G");
   const [networkType, setNetworkType] = useState("WiFi");
@@ -120,6 +121,8 @@ const RegisterNetworkComplaint = () => {
           <Link to="/" className="mt-auto"
             onClick={() => {
               localStorage.clear();
+              logout({ logoutParams: { returnTo: window.location.origin 
+              }});
             }}
           >
             <div className="group grid">

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
+import { useAuth0 } from "@auth0/auth0-react";
 const Unblock = () => {
+  const { logout} = useAuth0();
   const [url, setUrl] = useState("");
   const [purpose, setPurpose] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -102,6 +103,8 @@ const Unblock = () => {
           <Link to="/" className="mt-auto"
             onClick={() => {
               localStorage.clear();
+              logout({ logoutParams: { returnTo: window.location.origin 
+              }});
             }}
           >
             <div className="group grid">

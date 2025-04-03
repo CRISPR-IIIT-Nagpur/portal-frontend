@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { useAuth0 } from "@auth0/auth0-react";
+
 const Employees = () => {
+  const { logout} = useAuth0();
   const [data, setData] = useState([]);
   useEffect(() => {
     const fetchEmployees = async () => {
@@ -48,6 +51,8 @@ const Employees = () => {
           <Link to="/" className="mt-auto"
             onClick={() => {
               localStorage.clear();
+              logout({ logoutParams: { returnTo: window.location.origin 
+              }});
             }}
           >
             <div className="group grid">

@@ -1,7 +1,9 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 const TrackComplaint = () => {
+    const { logout } = useAuth0();
     const [complaints, setComplaints] = useState([]);
     const email = localStorage.getItem('email');
 
@@ -88,6 +90,8 @@ const TrackComplaint = () => {
                     <Link to="/" className="mt-auto"
                         onClick={() => {
                             localStorage.clear();
+                            logout({ logoutParams: { returnTo: window.location.origin 
+                            }});
                         }
                         }
                     >
