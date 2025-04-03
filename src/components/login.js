@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
-import jwtDecode from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 import axios from "axios";
 
 const clientId = "411162289341-erl87kacjnc27tn4vnsi4lltfberfgli.apps.googleusercontent.com";
