@@ -33,7 +33,7 @@ const ProtectedRoute = ({ element, allowedRoles }) => {
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/ComplaintPortal">
       <Routes>
         {/* Public Route */}
         <Route path="/" element={<Login />} />
