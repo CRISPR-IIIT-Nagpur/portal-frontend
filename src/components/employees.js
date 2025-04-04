@@ -4,12 +4,12 @@ import axios from "axios";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const Employees = () => {
-  const { logout} = useAuth0();
+  const { logout } = useAuth0();
   const [data, setData] = useState([]);
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const response = await axios.get("http://192.168.77.84:7979/api/network/admin/employees",);
+        const response = await axios.get("/ComplaintPortal/api/network/admin/employees",);
         setData(response.data['result']);
         console.log(response.data['result']);
       } catch (error) {
@@ -51,8 +51,11 @@ const Employees = () => {
           <Link to="/" className="mt-auto"
             onClick={() => {
               localStorage.clear();
-              logout({ logoutParams: { returnTo: window.location.origin 
-              }});
+              logout({
+                logoutParams: {
+                  returnTo: window.location.origin
+                }
+              });
             }}
           >
             <div className="group grid">

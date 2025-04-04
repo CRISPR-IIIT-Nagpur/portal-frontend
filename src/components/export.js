@@ -11,7 +11,7 @@ const Export = () => {
   useEffect(() => {
     const fetchComplaints = async () => {
       try {
-        const response = await axios.get("http://192.168.77.84:7979/api/network/admin/complaints");
+        const response = await axios.get("/ComplaintPortal/api/network/admin/complaints");
         setData(response.data['result']);
         console.log(response.data['result']);
       } catch (error) {
@@ -170,8 +170,11 @@ const Export = () => {
           <Link to="/" className="mt-auto"
             onClick={() => {
               localStorage.clear();
-              logout({ logoutParams: { returnTo: window.location.origin 
-              }});
+              logout({
+                logoutParams: {
+                  returnTo: window.location.origin
+                }
+              });
             }}
           >
             <div className="group grid">

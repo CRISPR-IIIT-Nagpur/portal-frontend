@@ -10,7 +10,7 @@ const TrackComplaint = () => {
     useEffect(() => {
         const fetchComplaints = async () => {
             try {
-                const response = await axios.get("http://192.168.77.84:7979/api/network/trackComplaint", {
+                const response = await axios.get("/ComplaintPortal/api/network/trackComplaint", {
                     params: { email }
                 });
                 setComplaints(response.data['result']);
@@ -90,8 +90,11 @@ const TrackComplaint = () => {
                     <Link to="/" className="mt-auto"
                         onClick={() => {
                             localStorage.clear();
-                            logout({ logoutParams: { returnTo: window.location.origin 
-                            }});
+                            logout({
+                                logoutParams: {
+                                    returnTo: window.location.origin
+                                }
+                            });
                         }
                         }
                     >

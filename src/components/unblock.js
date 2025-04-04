@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 const Unblock = () => {
-  const { logout} = useAuth0();
+  const { logout } = useAuth0();
   const [url, setUrl] = useState("");
   const [purpose, setPurpose] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -18,7 +18,7 @@ const Unblock = () => {
     e.preventDefault();
     setSubmitted(true);
     try {
-      const response = fetch("http://192.168.77.84:7979/api/network/unblockWebsites", {
+      const response = fetch("/ComplaintPortal/api/network/unblockWebsites", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -103,8 +103,11 @@ const Unblock = () => {
           <Link to="/" className="mt-auto"
             onClick={() => {
               localStorage.clear();
-              logout({ logoutParams: { returnTo: window.location.origin 
-              }});
+              logout({
+                logoutParams: {
+                  returnTo: window.location.origin
+                }
+              });
             }}
           >
             <div className="group grid">

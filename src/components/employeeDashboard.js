@@ -12,7 +12,7 @@ const EmployeeDashboard = () => {
     useEffect(() => {
         const fetchComplaints = async () => {
             try {
-                const response = await axios.get("http://192.168.77.84:7979/api/network/employeeComplaint", {
+                const response = await axios.get("/ComplaintPortal/api/network/employeeComplaint", {
                     params: { name }
                 });
                 setData(response.data['result']);
@@ -31,13 +31,13 @@ const EmployeeDashboard = () => {
 
     const handleResolveComplaint = async () => {
         try {
-            await axios.post("http://192.168.77.84:7979/api/network/resolveComplaint", {
+            await axios.post("/ComplaintPortal/api/network/resolveComplaint", {
                 complaintId: complaintToResolve,
                 employeeName: name
 
             });
 
-            const response = await axios.get("http://192.168.77.84:7979/api/network/employeeComplaint", {
+            const response = await axios.get("/ComplaintPortal/api/network/employeeComplaint", {
                 params: { name }
             });
             setData(response.data['result']);

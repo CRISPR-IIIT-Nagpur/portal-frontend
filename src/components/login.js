@@ -11,7 +11,7 @@ const Login = () => {
     if (isAuthenticated && user) {
       localStorage.setItem('userName', user.name);
       localStorage.setItem('email', user.email);
-      var response = axios.get('http://192.168.77.84:7979/api/getUserRole', {
+      var response = axios.get('/ComplaintPortal/api/getUserRole', {
         params: {
           username: user.email,
         },
@@ -44,12 +44,12 @@ const Login = () => {
             <span className="text-3xl font-black tracking-tight opacity-100 text-center">Welcome to Complaint Portal</span>
           </div>
 
-            <button
-              className="w-full cursor-pointer select-none rounded-md border border-black bg-black py-2 px-5 text-center text-sm text-white shadow hover:bg-indigo-600"
-              onClick={() => loginWithRedirect()}
-            >
-              Sign in with CRISPR-ID
-            </button>
+          <button
+            className="w-full cursor-pointer select-none rounded-md border border-black bg-black py-2 px-5 text-center text-sm text-white shadow hover:bg-indigo-600"
+            onClick={() => loginWithRedirect()}
+          >
+            Sign in with CRISPR-ID
+          </button>
 
         </div>
       </div>

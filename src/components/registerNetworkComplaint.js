@@ -30,7 +30,7 @@ const RegisterNetworkComplaint = () => {
     setError(null);
 
     try {
-      const response = await axios.post('http://192.168.77.84:7979/api/network/registerComplaint', {
+      const response = await axios.post('/ComplaintPortal/api/network/registerComplaint', {
         place,
         floor,
         networkType,
@@ -121,8 +121,11 @@ const RegisterNetworkComplaint = () => {
           <Link to="/" className="mt-auto"
             onClick={() => {
               localStorage.clear();
-              logout({ logoutParams: { returnTo: window.location.origin 
-              }});
+              logout({
+                logoutParams: {
+                  returnTo: window.location.origin
+                }
+              });
             }}
           >
             <div className="group grid">
