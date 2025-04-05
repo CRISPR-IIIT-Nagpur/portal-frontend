@@ -36,7 +36,7 @@ const AdminDashboard = () => {
         <Link to="/" className="mt-auto"
         onClick={() => {
           localStorage.clear();
-          logout({ logoutParams: { returnTo: window.location.origin 
+          logout({ logoutParams: { returnTo: '${window.location.origin}/ComplaintPortal/'
           }});
           }}
         >
