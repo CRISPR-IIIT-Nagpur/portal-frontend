@@ -1,40 +1,53 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Login = () => {
-  const { loginWithRedirect, user, isAuthenticated } = useAuth0();
+  const { loginWithRedirect, user, isAuthenticated, isLoading } = useAuth0();
   const navigate = useNavigate();
+  const [authInProgress, setAuthInProgress] = useState(false);
 
   useEffect(() => {
     if (isAuthenticated && user) {
+      setAuthInProgress(true);
       localStorage.setItem('userName', user.name);
       localStorage.setItem('email', user.email);
-      var response = axios.get('/ComplaintPortal/api/getUserRole', {
+
+      axios.get('/ComplaintPortal/api/getUserRole', {
         params: {
           username: user.email,
         },
-      }
-      )
-      response.then((res) => {
-        if (res.data.success) {
-          localStorage.setItem('role', res.data.role);
-          if (res.data.role === 'admin') {
-            navigate("/adminDashboard");
-          } else if (res.data.role === 'employee') {
-            navigate("/employeeDashboard");
+      })
+        .then((res) => {
+          if (res.data.success) {
+            localStorage.setItem('role', res.data.role);
+            if (res.data.role === 'admin') {
+              navigate("/adminDashboard");
+            } else if (res.data.role === 'employee') {
+              navigate("/employeeDashboard");
+            } else {
+              navigate("/dashboard");
+            }
           } else {
-            navigate("/dashboard");
+            console.error("Error fetching user role:", res.data.message);
+            setAuthInProgress(false);
           }
-        } else {
-          console.error("Error fetching user role:", res.data.message);
-        }
-      }).catch((error) => {
-        console.error("Error fetching user role:", error);
-      });
+        }).catch((error) => {
+          console.error("Error fetching user role:", error);
+          setAuthInProgress(false);
+        });
     }
   }, [isAuthenticated, user, navigate]);
+
+  // Show loading indicator when Auth0 is loading or our auth process is in progress
+  if (isLoading || authInProgress) {
+    return (
+      <div className="flex min-h-screen w-screen items-center justify-center text-gray-600 bg-gray-50">
+        <div className="text-xl font-medium">Loading...</div>
+      </div>
+    );
+  }
 
   return (
     <div className="flex min-h-screen w-screen items-center justify-center text-gray-600 bg-gray-50">
@@ -50,7 +63,6 @@ const Login = () => {
           >
             Sign in with CRISPR-ID
           </button>
-
         </div>
       </div>
     </div>
