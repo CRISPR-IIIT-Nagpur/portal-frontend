@@ -18,9 +18,9 @@ const Login = () => {
       const res = await axios.post(config.LOGIN, { username, password });
       if (res.data && res.data.success) {
         // Save basic user info
-  if (res.data.name) localStorage.setItem('userName', res.data.name);
-  if (res.data.email) localStorage.setItem('email', res.data.email || username);
-  if (res.data.role) localStorage.setItem('role', res.data.role);
+        if (res.data.name) localStorage.setItem('userName', res.data.name);
+        if (res.data.email) localStorage.setItem('email', res.data.email || username);
+        if (res.data.role) localStorage.setItem('role', res.data.role);
         // If name is missing on the server, prompt the user and update it
         if (!res.data.name) {
           let providedName = '';
