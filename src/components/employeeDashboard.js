@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import axios from "axios";
+import config from '../config';
 
 const EmployeeDashboard = () => {
     const [data, setData] = useState([]);
@@ -12,7 +13,7 @@ const EmployeeDashboard = () => {
     useEffect(() => {
         const fetchComplaints = async () => {
             try {
-                const response = await axios.get("/ComplaintPortal/api/network/employeeComplaint", {
+                const response = await axios.get(config.API('/api/network/employeeComplaint'), {
                     params: { name }
                 });
                 setData(response.data['result']);
@@ -31,13 +32,13 @@ const EmployeeDashboard = () => {
 
     const handleResolveComplaint = async () => {
         try {
-            await axios.post("/ComplaintPortal/api/network/resolveComplaint", {
+            await axios.post(config.API('/api/network/resolveComplaint'), {
                 complaintId: complaintToResolve,
                 employeeName: name
 
             });
 
-            const response = await axios.get("/ComplaintPortal/api/network/employeeComplaint", {
+            const response = await axios.get(config.API('/api/network/employeeComplaint'), {
                 params: { name }
             });
             setData(response.data['result']);

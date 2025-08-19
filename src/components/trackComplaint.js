@@ -1,16 +1,19 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
-import { useAuth0 } from "@auth0/auth0-react";
+import config from '../config';
 const TrackComplaint = () => {
-    const { logout } = useAuth0();
+    const logout = () => {
+        localStorage.clear();
+        window.location.href = `${window.location.origin}/ComplaintPortal/`;
+    };
     const [complaints, setComplaints] = useState([]);
     const email = localStorage.getItem('email');
 
     useEffect(() => {
         const fetchComplaints = async () => {
             try {
-                const response = await axios.get("/ComplaintPortal/api/network/trackComplaint", {
+                const response = await axios.get(config.API('/api/network/trackComplaint'), {
                     params: { email }
                 });
                 setComplaints(response.data['result']);
@@ -87,17 +90,7 @@ const TrackComplaint = () => {
       <span className="absolute w-auto p-2 my-2 min-w-max left-20 rounded-md shadow-md text-black bg-white text-xs font-bold transition-all duration-100 scale-0 origin-left group-hover:scale-100">Contribute PYQ</span>
       </div>
       </Link> */}
-                    <Link to="/" className="mt-auto"
-                        onClick={() => {
-                            localStorage.clear();
-                            logout({
-                                logoutParams: {
-                                    returnTo: `${window.location.origin}/ComplaintPortal/`
-                                }
-                            });
-                        }
-                        }
-                    >
+                    <Link to="/" className="mt-auto" onClick={logout}>
                         <div className="group grid">
                             <div className="relative flex items-center justify-center h-12 w-12  mb-2 mx-auto shadow-lg bg-white hover:bg-green-500 rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer"><img src={require('../assets/logout.png')} className="h-6 w-6" alt="logo" /></div>
                             <span className="absolute w-auto p-2 my-2 min-w-max left-20 rounded-md shadow-md text-black bg-white text-xs font-bold transition-all duration-100 scale-0 origin-left group-hover:scale-100">Log Out</span>

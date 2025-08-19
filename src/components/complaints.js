@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import config from '../config';
 import { Link } from "react-router-dom";
 
 const Complaints = () => {
@@ -12,7 +13,7 @@ const Complaints = () => {
   useEffect(() => {
     const fetchComplaints = async () => {
       try {
-        const response = await axios.get("/ComplaintPortal/api/network/admin/complaints");
+        const response = await axios.get(config.API('/api/network/admin/complaints'));
         setData(response.data['result']);
         console.log(response.data['result']);
       } catch (error) {
@@ -24,7 +25,7 @@ const Complaints = () => {
 
   const fetchEmployees = async () => {
     try {
-      const response = await axios.get("/ComplaintPortal/api/network/admin/employees");
+      const response = await axios.get(config.API('/api/network/admin/employees'));
       setEmployees(response.data['result']);
     } catch (error) {
       console.error("Error fetching employees:", error);
@@ -41,13 +42,13 @@ const Complaints = () => {
     if (!selectedEmployee) return;
 
     try {
-      await axios.post("/ComplaintPortal/api/network/admin/assignComplaint", {
+      await axios.post(config.API('/api/network/admin/assignComplaint'), {
         complaintId: selectedComplaintId,
         employeeId: selectedEmployee
       });
 
       // Refresh complaints data
-      const response = await axios.get("/ComplaintPortal/api/network/admin/complaints");
+      const response = await axios.get(config.API('/api/network/admin/complaints'));
       setData(response.data['result']);
 
       // Close modal and reset selection
