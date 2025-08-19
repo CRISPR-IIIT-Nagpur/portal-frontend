@@ -9,6 +9,10 @@ const Complaints = () => {
   const [selectedComplaintId, setSelectedComplaintId] = useState(null);
   const [employees, setEmployees] = useState([]);
   const [selectedEmployee, setSelectedEmployee] = useState(null);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [statusFilter, setStatusFilter] = useState("All");
+  const [typeFilter, setTypeFilter] = useState("All");
+  const [searchBy, setSearchBy] = useState('All');
 
   useEffect(() => {
     const fetchComplaints = async () => {
@@ -22,6 +26,48 @@ const Complaints = () => {
     };
     fetchComplaints();
   }, []);
+
+  // derived options for network types present in complaints
+  const typeOptions = Array.from(new Set(data.map(d => d.network_type))).filter(Boolean);
+
+  // apply search and filters client-side
+  const filteredData = data.filter((item) => {
+    // status filter
+    if (statusFilter !== 'All' && item.status !== statusFilter) return false;
+
+    // type filter
+    if (typeFilter !== 'All' && item.network_type !== typeFilter) return false;
+
+    // search behavior: either across all fields or a specific field
+    if (!searchQuery) return true;
+    const q = searchQuery.toLowerCase();
+    const getField = (field) => {
+      switch (field) {
+        case 'Name': return item.name;
+        case 'Room': return item.roomNo && String(item.roomNo);
+        case 'Floor': return item.floor && String(item.floor);
+        case 'Description': return item.description;
+        case 'Type': return item.network_type;
+        case 'Assigned': return item.assigned_to;
+        default: return null;
+      }
+    };
+
+    if (searchBy === 'All') {
+      const matches = [
+        item.name,
+        item.roomNo && String(item.roomNo),
+        item.floor && String(item.floor),
+        item.description,
+        item.network_type,
+        item.assigned_to
+      ].filter(Boolean).some(f => String(f).toLowerCase().includes(q));
+      return matches;
+    }
+
+    const fieldValue = getField(searchBy);
+    return fieldValue ? String(fieldValue).toLowerCase().includes(q) : false;
+  });
 
   const fetchEmployees = async () => {
     try {
@@ -97,7 +143,50 @@ const Complaints = () => {
         </div>
         <div className="h-screen ml-4">
           <p className="text-3xl text-center font-bold mt-10 mb-5">Complaints</p>
-          <div className="overflow-y-auto h-5/6 mr-10 rounded-xl no-scrollbar">
+          <div className="mx-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div className="flex items-center gap-2">
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search..."
+                className="px-3 py-2 border rounded-md w-64"
+              />
+
+              <select value={searchBy} onChange={e => setSearchBy(e.target.value)} className="px-3 py-2 border rounded-md">
+                <option value="All">All</option>
+                <option value="Name">Name</option>
+                <option value="Room">Room</option>
+                <option value="Floor">Floor</option>
+                <option value="Description">Description</option>
+                <option value="Type">Type</option>
+                <option value="Assigned">Assigned</option>
+              </select>
+
+              <button
+                onClick={() => { setSearchQuery(''); setStatusFilter('All'); setTypeFilter('All'); setSearchBy('All'); }}
+                className="px-3 py-2 bg-gray-200 rounded-md"
+              >Clear</button>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <select value={statusFilter} onChange={e => setStatusFilter(e.target.value)} className="px-3 py-2 border rounded-md">
+                <option value="All">All Status</option>
+                <option value="Pending">Pending</option>
+                <option value="Resolved">Resolved</option>
+                <option value="In Progress">In Progress</option>
+              </select>
+
+              <select value={typeFilter} onChange={e => setTypeFilter(e.target.value)} className="px-3 py-2 border rounded-md">
+                <option value="All">All Types</option>
+                {typeOptions.map((t, i) => (
+                  <option key={i} value={t}>{t}</option>
+                ))}
+              </select>
+            </div>
+          </div>
+
+          <div className="overflow-y-auto h-5/6 mr-10 rounded-xl no-scrollbar mt-4">
             <table class="min-w-full divide-y divide-slate-300">
               <thead class="bg-black sticky top-0">
                 <tr>
@@ -112,7 +201,7 @@ const Complaints = () => {
                 </tr>
               </thead>
               <tbody class="divide-y divide-slate-200 bg-white items-center justify-items-center">
-                {data.map((item, index) => (
+                {filteredData.map((item, index) => (
                   <tr key={index}>
                     <td class="pl-4 pr-3 py-3.5 text-left text-sm font-medium text-gray-900 sm:pl-6">{item.floor}</td>
                     <td class="pl-4 pr-3 py-3.5 text-left text-sm font-medium text-gray-900 sm:pl-6">{item.roomNo}</td>

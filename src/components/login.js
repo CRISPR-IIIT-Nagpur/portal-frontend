@@ -18,9 +18,30 @@ const Login = () => {
       const res = await axios.post(config.LOGIN, { username, password });
       if (res.data && res.data.success) {
         // Save basic user info
-        if (res.data.name) localStorage.setItem('userName', res.data.name);
-        if (res.data.email) localStorage.setItem('email', res.data.email || username);
-        if (res.data.role) localStorage.setItem('role', res.data.role);
+  if (res.data.name) localStorage.setItem('userName', res.data.name);
+  if (res.data.email) localStorage.setItem('email', res.data.email || username);
+  if (res.data.role) localStorage.setItem('role', res.data.role);
+        // If name is missing on the server, prompt the user and update it
+        if (!res.data.name) {
+          let providedName = '';
+          // Prompt up to 3 times for a non-empty name
+          for (let i = 0; i < 3; i++) {
+            providedName = window.prompt('Please enter your name to complete your profile:') || '';
+            providedName = providedName.trim();
+            if (providedName) break;
+          }
+          if (providedName) {
+            try {
+              await axios.post(config.API('/api/updateName'), { email: res.data.email || username, name: providedName });
+              localStorage.setItem('userName', providedName);
+            } catch (err) {
+              console.error('Failed to update name:', err);
+            }
+          } else {
+            // If user refuses to provide a name, set userName to email as a fallback so ProtectedRoute allows navigation
+            localStorage.setItem('userName', res.data.email || username || '');
+          }
+        }
 
         // Navigate based on role
         const role = res.data.role;
@@ -29,7 +50,25 @@ const Login = () => {
         else navigate('/dashboard');
       } else if (res.data && res.data.requiresProfile) {
         // partial profile: redirect to dashboard or a profile page if exists
-        localStorage.setItem('userName', res.data.name || '');
+        // If server indicates profile incomplete, ask for name and update
+        let providedName = '';
+        for (let i = 0; i < 3; i++) {
+          providedName = window.prompt('Please enter your name to complete your profile:') || '';
+          providedName = providedName.trim();
+          if (providedName) break;
+        }
+        if (providedName) {
+          try {
+            await axios.post(config.API('/api/updateName'), { email: res.data.email || username, name: providedName });
+            localStorage.setItem('userName', providedName);
+          } catch (err) {
+            console.error('Failed to update name:', err);
+            localStorage.setItem('userName', res.data.name || '');
+          }
+        } else {
+          // fallback to email so ProtectedRoute allows navigation
+          localStorage.setItem('userName', res.data.email || username || '');
+        }
         localStorage.setItem('email', res.data.email || username);
         localStorage.setItem('role', res.data.role || 'user');
         navigate('/dashboard');
